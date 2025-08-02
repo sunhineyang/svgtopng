@@ -4,7 +4,7 @@
     "@type": "WebApplication",
     "name": "Convert SVG to PNG Online - Fast & High Quality & No Uploads",
     "description": "Paste SVG code or upload files to convert to PNG instantly. Our tool handles batch processing and creates high-resolution PNGs right in your browser.",
-    "url": "https://traesvgtopng7eaf-0992sunshine-2698-sunshinyangs-projects.vercel.app",
+    "url": "https://svgtopng.app",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "Web Browser",
     "offers": {
@@ -20,7 +20,7 @@
       "Browser-based processing",
       "Multi-language support"
     ],
-    "screenshot": "https://traesvgtopng7eaf-0992sunshine-2698-sunshinyangs-projects.vercel.app/logo.png",
+    "screenshot": "https://svgtopng.app/logo.png",
     "softwareVersion": "1.0.0",
     "author": {
       "@type": "Organization",
@@ -32,15 +32,15 @@
     "title": "Convert SVG to PNG Online - Fast & High Quality & No Uploads",
     "description": "Paste SVG code or upload files to convert to PNG instantly. Our tool handles batch processing and creates high-resolution PNGs right in your browser.",
     "type": "website",
-    "url": "https://traesvgtopng7eaf-0992sunshine-2698-sunshinyangs-projects.vercel.app",
-    "image": "https://traesvgtopng7eaf-0992sunshine-2698-sunshinyangs-projects.vercel.app/logo.png",
+    "url": "https://svgtopng.app",
+    "image": "https://svgtopng.app/logo.png",
     "site_name": "SVG to PNG Converter"
   },
   "twitterCard": {
     "card": "summary_large_image",
     "title": "Convert SVG to PNG Online - Fast & High Quality & No Uploads",
     "description": "Paste SVG code or upload files to convert to PNG instantly. Our tool handles batch processing and creates high-resolution PNGs right in your browser.",
-    "image": "https://traesvgtopng7eaf-0992sunshine-2698-sunshinyangs-projects.vercel.app/logo.png"
+    "image": "https://svgtopng.app/logo.png"
   },
   "keywords": [
     "svg to png",

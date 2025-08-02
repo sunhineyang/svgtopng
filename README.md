@@ -2,6 +2,8 @@
 
 🚀 A modern, privacy-first SVG to PNG conversion tool that runs entirely in your browser.
 
+🌐 **Live Demo**: [svgtopng.app](https://svgtopng.app) - Try it now!
+
 ## ✨ Features
 
 ### 🔒 Privacy First
@@ -48,7 +50,7 @@
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/sunhineyang/svgtopng.git
 cd svgtopng
 
 # Install dependencies
@@ -93,6 +95,8 @@ src/
 ```
 
 ## 🎮 Usage
+
+**🌐 Try it live at [svgtopng.app](https://svgtopng.app)**
 
 ### File Upload Mode
 1. Switch to "File Upload" mode in the header
@@ -197,6 +201,8 @@ The interface adapts to different screen sizes:
 - **Maximum Files**: 20 files per batch
 - **Output Quality**: Configurable to balance quality vs. file size
 
+**🌐 Experience the performance yourself at [svgtopng.app](https://svgtopng.app)**
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit issues and pull requests.
@@ -231,4 +237,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Made with ❤️ for developers who value privacy and performance**
 
-🔗 [Live Demo](https://your-domain.com) | 🐛 [Report Issues](https://github.com/your-repo/issues) | 💡 [Feature Requests](https://github.com/your-repo/discussions)
+🔗 **[Live Demo - svgtopng.app](https://svgtopng.app)** | 🐛 [Report Issues](https://github.com/sunhineyang/svgtopng/issues) | 💡 [Feature Requests](https://github.com/sunhineyang/svgtopng/discussions)

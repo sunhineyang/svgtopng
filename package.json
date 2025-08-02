@@ -1,8 +1,18 @@
 {
   "name": "svgtopng",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "homepage": "https://svgtopng.app",
+  "description": "A modern, privacy-first SVG to PNG conversion tool - svgtopng.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sunhineyang/svgtopng.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sunhineyang/svgtopng/issues"
+  },
+  "keywords": ["svg", "png", "converter", "browser", "privacy", "svgtopng.app"],
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build && npm run build:multilang",
