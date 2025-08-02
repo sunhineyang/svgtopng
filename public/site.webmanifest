@@ -1,7 +1,7 @@
 {
-  "name": "Convert SVG to PNG Online - Fast & High Quality & No Uploads",
+  "name": "Free SVG to PNG Converter - Batch Convert with High Quality",
   "short_name": "SVG2PNG",
-  "description": "Paste SVG code or upload files to convert to PNG instantly. Our tool handles batch processing and creates high-resolution PNGs right in your browser.",
+  "description": "Convert SVG files or paste SVG code directly to PNG. Our tool supports batch conversion, high-resolution output, and processes everything in your browser for maximum speed and privacy—no uploads needed.",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
