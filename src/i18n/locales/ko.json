@@ -1,0 +1,139 @@
+{
+  "title": "SVG PNG 변환기 - 무료 온라인 도구",
+  "subtitle": "무료 온라인 SVG PNG 변환기",
+  "modes": {
+    "upload": "SVG 파일 업로드",
+    "code": "SVG 코드를 PNG로"
+  },
+  "upload": {
+    "dragDrop": "SVG 파일을 여기에 드래그하세요",
+    "clickSelect": "또는 클릭하여 파일 선택",
+    "supportedFormats": "지원 형식: .svg 파일 (각각 최대 10MB)",
+    "maxFiles": "한 번에 최대 20개 파일"
+  },
+  "codeEditor": {
+    "placeholder": "SVG 코드를 여기에 붙여넣으세요...",
+    "example": "SVG 코드 예시",
+    "validate": "SVG 검증",
+    "clear": "지우기"
+  },
+  "settings": {
+    "title": "변환 설정",
+    "width": "너비",
+    "height": "높이",
+    "quality": "품질",
+    "transparentBg": "투명 배경 유지",
+    "highRes": "고해상도 출력",
+    "customSize": "사용자 정의 크기",
+    "maintainRatio": "비율 유지"
+  },
+  "preview": {
+    "title": "미리보기",
+    "original": "원본 SVG",
+    "converted": "PNG 미리보기",
+    "size": "크기",
+    "dimensions": "치수",
+    "convertHint": "\"PNG로 변환\" 버튼을 클릭하여 변환 결과를 확인하세요"
+  },
+  "buttons": {
+    "convert": "PNG로 변환",
+    "download": "다운로드",
+    "downloadAll": "모두 다운로드",
+    "clear": "모두 지우기",
+    "addMore": "파일 더 추가",
+    "retry": "다시 시도"
+  },
+  "status": {
+    "ready": "준비됨",
+    "converting": "변환 중...",
+    "completed": "완료됨",
+    "error": "오류",
+    "validating": "검증 중..."
+  },
+  "errors": {
+    "invalidSvg": "잘못된 SVG 형식",
+    "fileTooLarge": "파일이 너무 큼 (최대 10MB)",
+    "unsupportedFormat": "지원되지 않는 파일 형식",
+    "conversionFailed": "변환 실패",
+    "noFiles": "선택된 파일 없음",
+    "browserNotSupported": "지원되지 않는 브라우저"
+  },
+  "languages": {
+    "en": "English",
+    "ko": "한국어",
+    "ja": "日本語",
+    "ru": "Русский"
+  },
+  "theme": {
+    "light": "밝음",
+    "dark": "어두움",
+    "system": "시스템"
+  },
+  "footer": {
+    "privacy": "모든 처리는 브라우저에서 로컬로 수행됩니다",
+    "noUpload": "어떤 파일도 서버에 업로드되지 않습니다",
+    "openSource": "오픈 소스"
+  },
+  "help": "도움이 필요하신가요?",
+  "gallery": {
+    "title": "SVG PNG 변환 갤러리",
+    "subtitle": "SVG에서 PNG로 변환 예시를 살펴보세요",
+    "viewCode": "코드 보기",
+    "viewPreview": "미리보기",
+    "examples": {
+      "icon": {
+        "title": "간단한 아이콘",
+        "description": "웹 인터페이스에 완벽한 기본 기하학적 아이콘"
+      },
+      "logo": {
+        "title": "회사 로고",
+        "description": "여러 색상을 가진 확장 가능한 로고 디자인"
+      },
+      "illustration": {
+        "title": "벡터 일러스트레이션",
+        "description": "그라디언트와 효과가 있는 복잡한 아트워크"
+      }
+    }
+  },
+  "faq": {
+    "title": "자주 묻는 질문",
+    "subtitle": "SVG에서 PNG로 변환에 대해 알아야 할 모든 것",
+    "stillHaveQuestions": "아직 궁금한 점이 있으신가요?",
+    "contactDescription": "SVG에서 PNG로 변환에 대한 추가 도움이 필요하거나 저희 도구에 대한 구체적인 질문이 있으시면 언제든지 연락해 주세요.",
+    "contactUs": "지원팀 문의",
+    "questions": {
+      "whatIsSvg": {
+        "question": "SVG란 무엇인가요?",
+        "answer": "SVG는 Scalable Vector Graphics의 약자입니다. 기술 도면, 차트, 로고 및 일러스트레이션에 널리 사용되는 벡터 그래픽의 업계 표준 형식입니다. 벡터 이미지는 수백만 개의 개별 픽셀이 아닌 좌표 집합에서 그려지므로 파일 크기가 일반적으로 더 작아 가능한 한 SVG를 사용하는 것이 좋습니다."
+      },
+      "whatIsPng": {
+        "question": "PNG란 무엇인가요?",
+        "answer": "PNG는 Portable Network Graphics의 약자입니다. JPEG와 달리 PNG는 무손실 압축 알고리즘을 사용하고 투명도를 지원합니다. 그러나 무손실 압축으로 인해 파일 크기가 JPEG보다 클 수 있습니다. PNG는 웹사이트 이미지에 적합하지만 크기 때문에 고해상도 사진에는 적합하지 않습니다."
+      },
+      "whyConvert": {
+        "question": "왜 SVG를 PNG로 변환하나요?",
+        "answer": "SVG가 모든 용도에 적합하지는 않지만, SVG를 PNG로 변환하는 것이 유용한 상황이 많이 있습니다. 예를 들어, 특정 애플리케이션과의 호환성을 위해 래스터 형식이 필요하거나, 썸네일을 만들거나, SVG 형식을 지원하지 않는 문서에 이미지를 삽입해야 하는 경우입니다."
+      },
+      "howItWorks": {
+        "question": "SVG에서 PNG로 변환은 어떻게 작동하나요?",
+        "answer": "SVG 이미지 파일을 PNG 형식으로 변환하는 것은 브라우저 렌더링 기술을 사용합니다. SVG가 HTML5 캔버스 요소에서 렌더링된 다음 PNG 형식으로 변환됩니다. 이 과정은 품질을 유지하면서 더 많은 애플리케이션과 호환되는 래스터 이미지를 생성합니다."
+      },
+      "qualityLoss": {
+        "question": "SVG를 PNG로 변환할 때 품질이 손실되나요?",
+        "answer": "변환 과정에서 높은 품질이 유지되지만, PNG는 래스터 형식이므로 이미지가 고정된 해상도를 갖게 됩니다. 최상의 결과를 위해 변환 중에 적절한 치수를 선택하세요. 원본 SVG는 확장 가능한 상태로 유지되며, PNG는 지정된 크기에 최적화됩니다."
+      },
+      "batchConversion": {
+        "question": "여러 SVG 파일을 한 번에 변환할 수 있나요?",
+        "answer": "네! 저희 도구는 최대 20개의 SVG 파일을 동시에 일괄 변환할 수 있습니다. 여러 파일을 업로드하고, 설정을 구성한 다음, 변환된 모든 PNG 파일을 편리한 ZIP 아카이브로 다운로드하세요."
+      }
+    }
+  },
+  "cta": {
+    "title": "SVG 파일을 변환할 준비가 되셨나요?",
+    "description": "벡터 그래픽을 고품질 PNG 이미지로 즉시 변환하세요. 회원가입 불필요, 완전 무료, 파일은 안전하게 보호됩니다.",
+    "startConverting": "지금 변환 시작하기",
+    "feature1": "업로드 불필요",
+    "feature2": "일괄 변환",
+    "feature3": "고품질"
+  }
+}

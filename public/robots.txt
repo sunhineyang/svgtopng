@@ -1,0 +1,24 @@
+# Robots.txt for SVG to PNG Converter
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://traesvgtopng7eaf-0992sunshine-2698-sunshinyangs-projects.vercel.app/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Disallow crawling of development files
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.vercel/
+Disallow: /src/
+Disallow: /scripts/
+
+# Allow crawling of all language versions
+Allow: /
+Allow: /ko
+Allow: /ja
+Allow: /ru

@@ -1,0 +1,139 @@
+{
+  "title": "SVG to PNG Converter - Free Online Tool",
+  "subtitle": "Free online SVG to PNG converter",
+  "modes": {
+    "upload": "SVG File Upload",
+    "code": "SVG Code to PNG"
+  },
+  "upload": {
+    "dragDrop": "Drag & drop SVG files for instant svg to png conversion",
+    "clickSelect": "or click to select SVG files for conversion",
+    "supportedFormats": "Supported formats: SVG for png conversion",
+    "maxFiles": "Maximum SVG files: 20"
+  },
+  "codeEditor": {
+    "placeholder": "Paste your SVG code here for svg to png conversion...",
+    "example": "Load SVG Example",
+    "validate": "Validate SVG for PNG Conversion",
+    "clear": "Clear SVG Code"
+  },
+  "settings": {
+    "title": "SVG to PNG Conversion Settings",
+    "width": "PNG Width",
+    "height": "PNG Height",
+    "quality": "PNG Quality",
+    "transparentBg": "Keep transparent background",
+    "highRes": "High resolution output",
+    "customSize": "Custom size",
+    "maintainRatio": "Maintain aspect ratio"
+  },
+  "preview": {
+    "title": "Preview",
+    "original": "Original SVG",
+    "converted": "PNG Preview",
+    "size": "Size",
+    "dimensions": "Dimensions",
+    "convertHint": "Click \"Convert to PNG\" to see the converted result"
+  },
+  "buttons": {
+    "convert": "Convert SVG to PNG",
+    "download": "Download PNG",
+    "downloadAll": "Download All PNG as ZIP",
+    "clear": "Clear All",
+    "addMore": "Add More Files",
+    "retry": "Retry"
+  },
+  "status": {
+    "ready": "Ready",
+    "converting": "Converting SVG to PNG...",
+    "completed": "SVG to PNG conversion completed!",
+    "error": "Error",
+    "validating": "Validating..."
+  },
+  "errors": {
+    "invalidSvg": "Invalid SVG format",
+    "fileTooLarge": "File too large (max 10MB)",
+    "unsupportedFormat": "Unsupported file format",
+    "conversionFailed": "Conversion failed",
+    "noFiles": "No files selected",
+    "browserNotSupported": "Browser not supported"
+  },
+  "languages": {
+    "en": "English",
+    "ko": "한국어",
+    "ja": "日本語",
+    "ru": "Русский"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "footer": {
+    "privacy": "All svg to png processing is done locally in your browser",
+    "noUpload": "No SVG files are uploaded to any server during conversion",
+    "openSource": "Open source svg converter - free to use"
+  },
+  "help": "Need Help?",
+  "gallery": {
+    "title": "SVG to PNG Gallery",
+    "subtitle": "Explore examples of SVG to PNG conversions",
+    "viewCode": "View Code",
+    "viewPreview": "View Preview",
+    "examples": {
+      "icon": {
+        "title": "Simple Icon",
+        "description": "Basic geometric icon perfect for web interfaces"
+      },
+      "logo": {
+        "title": "Company Logo",
+        "description": "Scalable logo design with multiple colors"
+      },
+      "illustration": {
+        "title": "Vector Illustration",
+        "description": "Complex artwork with gradients and effects"
+      }
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about SVG to PNG conversion",
+    "stillHaveQuestions": "Still have questions?",
+    "contactDescription": "If you need additional help with SVG to PNG conversion or have specific questions about our tool, feel free to reach out.",
+    "contactUs": "Contact Support",
+    "questions": {
+      "whatIsSvg": {
+        "question": "What is SVG?",
+        "answer": "SVG stands for Scalable Vector Graphics. It is an industry-standard format for vector graphics, making it popular for technical drawings, charts, logos, and illustrations. Since vector images are drawn from a set of coordinates rather than millions of individual pixels, file sizes are usually smaller, so it's preferable to use SVG wherever possible."
+      },
+      "whatIsPng": {
+        "question": "What is PNG?",
+        "answer": "PNG stands for Portable Network Graphics. Unlike JPEG, PNG has a lossless compression algorithm and supports transparency. However, because of lossless compression, file sizes tend to be higher than JPEG. PNGs are suitable for website imagery but not for high-resolution photos due to their size."
+      },
+      "whyConvert": {
+        "question": "Why convert SVG to PNG?",
+        "answer": "Although SVG isn't suitable for all use cases, there are many situations when converting SVG to PNG is useful. For example, if you need raster format for compatibility with certain applications, want to create thumbnails, or need to embed images in documents that don't support SVG format."
+      },
+      "howItWorks": {
+        "question": "How does SVG to PNG conversion work?",
+        "answer": "Converting an SVG image file into PNG format uses browser rendering technology. The SVG is rendered on an HTML5 canvas element, which is then converted to PNG format. This process maintains the quality while creating a raster image that's compatible with more applications."
+      },
+      "qualityLoss": {
+        "question": "Will I lose quality when converting SVG to PNG?",
+        "answer": "The conversion process maintains high quality, but since PNG is a raster format, the image will have a fixed resolution. For best results, choose appropriate dimensions during conversion. The original SVG remains scalable, while the PNG will be optimized for the specified size."
+      },
+      "batchConversion": {
+        "question": "Can I convert multiple SVG files at once?",
+        "answer": "Yes! Our tool supports batch conversion of up to 20 SVG files simultaneously. Simply upload multiple files, configure your settings, and download all converted PNG files as a convenient ZIP archive."
+      }
+    }
+  },
+  "cta": {
+    "title": "Ready to Convert Your SVG Files?",
+    "description": "Transform your vector graphics into high-quality PNG images instantly. No registration required, completely free, and your files stay private.",
+    "startConverting": "Start Converting Now",
+    "feature1": "No Upload Required",
+    "feature2": "Batch Conversion",
+    "feature3": "High Quality"
+  }
+}

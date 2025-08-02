@@ -1,0 +1,32 @@
+{
+  "rewrites": [
+    {
+      "source": "/ko",
+      "destination": "/ko/index.html"
+    },
+    {
+      "source": "/ko/(.*)",
+      "destination": "/ko/index.html"
+    },
+    {
+      "source": "/ja",
+      "destination": "/ja/index.html"
+    },
+    {
+      "source": "/ja/(.*)",
+      "destination": "/ja/index.html"
+    },
+    {
+      "source": "/ru",
+      "destination": "/ru/index.html"
+    },
+    {
+      "source": "/ru/(.*)",
+      "destination": "/ru/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

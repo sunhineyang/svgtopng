@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Convert SVG to PNG Online - Fast & High Quality & No Uploads</title>
+    <meta name="description" content="Paste SVG code or upload files to convert to PNG instantly. Our tool handles batch processing and creates high-resolution PNGs right in your browser." />
+    <meta name="keywords" content="svg to png, svg converter, svg code to png, online svg converter, batch svg convert, no upload svg converter" />
+    <meta name="author" content="SVG to PNG Converter" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Convert SVG to PNG Online - Fast & High Quality & No Uploads" />
+    <meta property="og:description" content="Paste SVG code or upload files to convert to PNG instantly. Our tool handles batch processing and creates high-resolution PNGs right in your browser." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Convert SVG to PNG Online - Fast & High Quality & No Uploads" />
+    <meta name="twitter:description" content="Paste SVG code or upload files to convert to PNG instantly. Our tool handles batch processing and creates high-resolution PNGs right in your browser." />
+    <script type="module">
+      if (import.meta.hot?.on) {
+        import.meta.hot.on('vite:error', (error) => {
+          if (error.err) {
+            console.error([error.err.message, error.err.frame].filter(Boolean).join('\n'));
+          }
+        });
+      }
+    </script>
+      <link rel="alternate" hreflang="en" href="https://svgtopng.vercel.app/" />
+    <link rel="alternate" hreflang="ko" href="https://svgtopng.vercel.app/ko/" />
+    <link rel="alternate" hreflang="ja" href="https://svgtopng.vercel.app/ja/" />
+    <link rel="alternate" hreflang="ru" href="https://svgtopng.vercel.app/ru/" />
+    <link rel="alternate" hreflang="x-default" href="https://svgtopng.vercel.app/" />
+  
+    <script>
+      // 设置当前页面语言
+      window.__INITIAL_LANGUAGE__ = 'en';
+      
+      // 语言检测和重定向逻辑
+      (function() {
+        const currentPath = window.location.pathname;
+        const expectedPath = '';
+        
+        // 如果URL路径与当前语言不匹配，进行重定向
+        if (currentPath !== expectedPath && currentPath !== expectedPath + '/') {
+          const newUrl = 'https://svgtopng.vercel.app';
+          if (window.location.href !== newUrl && window.location.href !== newUrl + '/') {
+            // 只在必要时重定向，避免无限循环
+            console.log('Language mismatch detected, redirecting to:', newUrl);
+          }
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

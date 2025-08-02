@@ -1,0 +1,77 @@
+{
+  "aiDescription": {
+    "toolName": "SVG to PNG Converter",
+    "purpose": "Convert SVG vector graphics to PNG raster images instantly in the browser",
+    "capabilities": [
+      "Convert SVG code to PNG images",
+      "Upload and convert SVG files",
+      "Batch processing of multiple files",
+      "High-resolution output control",
+      "Real-time preview",
+      "No server uploads required",
+      "Multi-language support (English, Korean, Japanese, Russian)",
+      "Dark/light theme support",
+      "Responsive design for all devices"
+    ],
+    "technicalFeatures": [
+      "Client-side processing using HTML5 Canvas API",
+      "Support for complex SVG elements and styles",
+      "Customizable output resolution and quality",
+      "Memory-efficient batch processing",
+      "Real-time SVG validation",
+      "Progressive enhancement",
+      "Cross-browser compatibility"
+    ],
+    "useCases": [
+      "Web developers converting SVG icons to PNG",
+      "Designers creating raster versions of vector graphics",
+      "Content creators preparing images for different platforms",
+      "Students learning about vector vs raster graphics",
+      "Anyone needing quick SVG to PNG conversion without software installation"
+    ],
+    "advantages": [
+      "100% free to use",
+      "No registration required",
+      "No file size limits",
+      "Privacy-focused (no uploads to servers)",
+      "Fast processing",
+      "Professional quality output",
+      "Works offline after initial load",
+      "Mobile-friendly interface"
+    ]
+  },
+  "seoKeywords": {
+    "primary": ["svg to png", "svg converter", "online svg converter"],
+    "secondary": ["svg code to png", "batch svg convert", "no upload svg converter"],
+    "longTail": [
+      "convert svg to png online free",
+      "svg to png converter no upload",
+      "batch convert svg files to png",
+      "svg code paste to png converter",
+      "high quality svg to png conversion",
+      "svg to png converter browser based"
+    ]
+  },
+  "contentSuggestions": {
+    "blogTopics": [
+      "SVG vs PNG: When to Use Each Format",
+      "How to Convert SVG to PNG Without Losing Quality",
+      "Batch Converting SVG Files: Best Practices",
+      "Understanding Vector vs Raster Graphics",
+      "Optimizing SVG Files Before Conversion"
+    ],
+    "faqTopics": [
+      "What is the difference between SVG and PNG?",
+      "How do I maintain image quality when converting?",
+      "Can I convert multiple SVG files at once?",
+      "Is my data safe when using this converter?",
+      "What browsers are supported?"
+    ]
+  },
+  "multilingualSupport": {
+    "supportedLanguages": ["en", "ko", "ja", "ru"],
+    "defaultLanguage": "en",
+    "languageDetection": "url-based",
+    "fallbackLanguage": "en"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Convert SVG to PNG Online - Fast & High Quality & No Uploads",
+    "description": "Paste SVG code or upload files to convert to PNG instantly. Our tool handles batch processing and creates high-resolution PNGs right in your browser.",
+    "url": "https://traesvgtopng7eaf-0992sunshine-2698-sunshinyangs-projects.vercel.app",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "SVG to PNG conversion",
+      "Batch processing",
+      "High-resolution output",
+      "No file uploads required",
+      "Browser-based processing",
+      "Multi-language support"
+    ],
+    "screenshot": "https://traesvgtopng7eaf-0992sunshine-2698-sunshinyangs-projects.vercel.app/logo.png",
+    "softwareVersion": "1.0.0",
+    "author": {
+      "@type": "Organization",
+      "name": "SVG2PNG Tools"
+    },
+    "inLanguage": ["en", "ko", "ja", "ru"]
+  },
+  "openGraph": {
+    "title": "Convert SVG to PNG Online - Fast & High Quality & No Uploads",
+    "description": "Paste SVG code or upload files to convert to PNG instantly. Our tool handles batch processing and creates high-resolution PNGs right in your browser.",
+    "type": "website",
+    "url": "https://traesvgtopng7eaf-0992sunshine-2698-sunshinyangs-projects.vercel.app",
+    "image": "https://traesvgtopng7eaf-0992sunshine-2698-sunshinyangs-projects.vercel.app/logo.png",
+    "site_name": "SVG to PNG Converter"
+  },
+  "twitterCard": {
+    "card": "summary_large_image",
+    "title": "Convert SVG to PNG Online - Fast & High Quality & No Uploads",
+    "description": "Paste SVG code or upload files to convert to PNG instantly. Our tool handles batch processing and creates high-resolution PNGs right in your browser.",
+    "image": "https://traesvgtopng7eaf-0992sunshine-2698-sunshinyangs-projects.vercel.app/logo.png"
+  },
+  "keywords": [
+    "svg to png",
+    "svg converter",
+    "svg code to png",
+    "online svg converter",
+    "batch svg convert",
+    "no upload svg converter",
+    "free svg to png",
+    "svg to image converter",
+    "vector to raster",
+    "svg png conversion tool"
+  ],
+  "languages": {
+    "en": {
+      "title": "Convert SVG to PNG Online - Fast & High Quality & No Uploads",
+      "description": "Paste SVG code or upload files to convert to PNG instantly. Our tool handles batch processing and creates high-resolution PNGs right in your browser.",
+      "keywords": "svg to png, svg converter, svg code to png, online svg converter, batch svg convert, no upload svg converter"
+    },
+    "ko": {
+      "title": "SVG를 PNG로 온라인 변환 - 빠르고 고품질 & 업로드 없음",
+      "description": "SVG 코드를 붙여넣거나 파일을 업로드하여 즉시 PNG로 변환하세요. 우리 도구는 일괄 처리를 지원하며 브라우저에서 바로 고해상도 PNG를 생성합니다.",
+      "keywords": "svg png 변환, svg 변환기, svg 코드 png, 온라인 svg 변환, 일괄 svg 변환, 업로드 없는 svg 변환기"
+    },
+    "ja": {
+      "title": "SVGをPNGにオンライン変換 - 高速・高品質・アップロード不要",
+      "description": "SVGコードを貼り付けるかファイルをアップロードして、即座にPNGに変換できます。当ツールはバッチ処理に対応し、ブラウザで直接高解像度PNGを作成します。",
+      "keywords": "svg png 変換, svg コンバーター, svg コード png, オンライン svg 変換, バッチ svg 変換, アップロード不要 svg 変換器"
+    },
+    "ru": {
+      "title": "Конвертация SVG в PNG онлайн - Быстро, качественно и без загрузок",
+      "description": "Вставьте SVG код или загрузите файлы для мгновенной конвертации в PNG. Наш инструмент поддерживает пакетную обработку и создает PNG высокого разрешения прямо в вашем браузере.",
+      "keywords": "svg в png, svg конвертер, svg код в png, онлайн svg конвертер, пакетная svg конвертация, конвертер svg без загрузки"
+    }
+  }
+}

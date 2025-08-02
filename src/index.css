@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* 🎨 品牌色彩体系 - 基于Logo分析 */
+  --primary-blue: #4b9ee4;      /* 主品牌色 - 明亮蓝 */
+  --secondary-teal: #328976;    /* 辅助色 - 深青绿 */
+  --accent-blue: #2563eb;       /* 强调色 - 深蓝 */
+
+  /* 🏠 背景色系 - 浅色模式 */
+  --bg-primary: #ffffff;        /* 主背景 - 纯白 */
+  --bg-secondary: #f8fafc;      /* 次背景 - 浅灰 */
+  --bg-accent: #f0f6ff;         /* 强调背景 - 浅蓝 */
+  --bg-card: #ffffff;           /* 卡片背景 */
+  --bg-hover: #f1f5f9;          /* 悬停背景 */
+
+  /* 📝 文字色系 - 浅色模式 */
+  --text-primary: #1e293b;      /* 主文字 - 深灰 */
+  --text-secondary: #64748b;    /* 次文字 - 中灰 */
+  --text-muted: #94a3b8;        /* 辅助文字 - 浅灰 */
+  --text-inverse: #ffffff;      /* 反色文字 - 白色 */
+
+  /* 🎯 状态色系 */
+  --success: #10b981;           /* 成功 - 绿色 */
+  --warning: #f59e0b;           /* 警告 - 橙色 */
+  --error: #ef4444;             /* 错误 - 红色 */
+  --info: #3b82f6;              /* 信息 - 蓝色 */
+
+  /* 🔗 边框色系 */
+  --border-light: #e2e8f0;      /* 浅边框 */
+  --border-medium: #cbd5e1;     /* 中边框 */
+  --border-dark: #94a3b8;       /* 深边框 */
+  --border-focus: var(--primary-blue); /* 聚焦边框 */
+
+  /* 🎨 组件应用色 */
+  --button-primary-bg: var(--primary-blue);
+  --button-primary-text: var(--text-inverse);
+  --button-secondary-bg: var(--bg-accent);
+  --button-secondary-text: var(--primary-blue);
+  --link-color: var(--primary-blue);
+  --focus-ring: var(--primary-blue);
+  --shadow-brand: 0 4px 14px 0 rgba(75, 158, 228, 0.15);
+}
+
+/* 🌙 深色模式配色 */
+.dark {
+  /* 🏠 背景色系 - 深色模式 */
+  --bg-primary: #0f172a;        /* 主背景 - 深蓝黑 */
+  --bg-secondary: #1e293b;      /* 次背景 - 深灰蓝 */
+  --bg-accent: #1e3a8a;         /* 强调背景 - 深蓝 */
+  --bg-card: #1e293b;           /* 卡片背景 */
+  --bg-hover: #334155;          /* 悬停背景 */
+
+  /* 📝 文字色系 - 深色模式 */
+  --text-primary: #f1f5f9;      /* 主文字 - 浅色 */
+  --text-secondary: #cbd5e1;    /* 次文字 - 中浅色 */
+  --text-muted: #94a3b8;        /* 辅助文字 - 中灰 */
+  --text-inverse: #1e293b;      /* 反色文字 - 深色 */
+
+  /* 🎨 品牌色调整 - 深色模式 */
+  --primary-blue: #60a5fa;      /* 主品牌色 - 亮蓝 */
+  --secondary-teal: #34d399;    /* 辅助色 - 亮绿 */
+
+  /* 🔗 边框色系 - 深色模式 */
+  --border-light: #334155;      /* 浅边框 */
+  --border-medium: #475569;     /* 中边框 */
+  --border-dark: #64748b;       /* 深边框 */
+
+  /* 🎨 组件应用色 - 深色模式 */
+  --button-primary-bg: var(--primary-blue);
+  --button-primary-text: var(--text-inverse);
+  --button-secondary-bg: var(--bg-accent);
+  --button-secondary-text: var(--primary-blue);
+  --shadow-brand: 0 4px 14px 0 rgba(96, 165, 250, 0.15);
+}
+
+/* 🎨 全局样式优化 */
+* {
+  border-color: var(--border-light);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 🔗 链接样式 */
+a {
+  color: var(--link-color);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* 🎯 聚焦样式 */
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
