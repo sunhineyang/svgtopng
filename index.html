@@ -29,11 +29,11 @@
         });
       }
     </script>
-      <link rel="alternate" hreflang="en" href="https://svgtopng.vercel.app/" />
-    <link rel="alternate" hreflang="ko" href="https://svgtopng.vercel.app/ko/" />
-    <link rel="alternate" hreflang="ja" href="https://svgtopng.vercel.app/ja/" />
-    <link rel="alternate" hreflang="ru" href="https://svgtopng.vercel.app/ru/" />
-    <link rel="alternate" hreflang="x-default" href="https://svgtopng.vercel.app/" />
+      <link rel="alternate" hreflang="en" href="https://svgtopng.app/" />
+    <link rel="alternate" hreflang="ko" href="https://svgtopng.app/ko/" />
+    <link rel="alternate" hreflang="ja" href="https://svgtopng.app/ja/" />
+    <link rel="alternate" hreflang="ru" href="https://svgtopng.app/ru/" />
+    <link rel="alternate" hreflang="x-default" href="https://svgtopng.app/" />
   
     <script>
       // 设置当前页面语言
@@ -46,7 +46,7 @@
         
         // 如果URL路径与当前语言不匹配，进行重定向
         if (currentPath !== expectedPath && currentPath !== expectedPath + '/') {
-          const newUrl = 'https://svgtopng.vercel.app';
+          const newUrl = 'https://svgtopng.app';
           if (window.location.href !== newUrl && window.location.href !== newUrl + '/') {
             // 只在必要时重定向，避免无限循环
             console.log('Language mismatch detected, redirecting to:', newUrl);

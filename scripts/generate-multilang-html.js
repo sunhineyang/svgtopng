@@ -54,11 +54,11 @@ const languages = {
 };
 
 // 网站基础URL（部署时需要修改）
-const baseUrl = 'https://svgtopng.vercel.app';
+const baseUrl = 'https://svgtopng.app';
 
-// 读取原始HTML模板
+// 读取Vite构建后的HTML模板
 function readTemplate() {
-  const templatePath = path.join(__dirname, '../index.html');
+  const templatePath = path.join(__dirname, '../dist/index.html');
   return fs.readFileSync(templatePath, 'utf8');
 }
 
@@ -102,11 +102,14 @@ function generateHtmlForLanguage(template, lang) {
     // 更新twitter:description
     .replace(/(<meta name="twitter:description" content=").*?(" \/>)/, `$1${langData.twitterDescription}$2`);
   
-  // 在</head>前插入hreflang标签
-  html = html.replace('</head>', `${hreflangTags}\n  </head>`);
+  // 移除现有的hreflang标签（如果有的话）
+  html = html.replace(/\s*<link rel="alternate" hreflang="[^"]*" href="[^"]*" \/>/g, '');
   
-  // 添加语言检测脚本
-  const languageScript = `
+  // 移除现有的语言检测脚本（如果有的话）
+  html = html.replace(/\s*<script>[\s\S]*?window\.__INITIAL_LANGUAGE__[\s\S]*?<\/script>/g, '');
+  
+  // 在</head>前插入hreflang标签
+  html = html.replace('</head>', `\n${hreflangTags}\n  
     <script>
       // 设置当前页面语言
       window.__INITIAL_LANGUAGE__ = '${lang}';
@@ -125,9 +128,8 @@ function generateHtmlForLanguage(template, lang) {
           }
         }
       })();
-    </script>`;
-  
-  html = html.replace('</head>', `${languageScript}\n  </head>`);
+    </script>
+  </head>`);
   
   return html;
 }
