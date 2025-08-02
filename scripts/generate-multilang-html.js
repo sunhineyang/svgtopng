@@ -105,7 +105,7 @@ function generateHtmlForLanguage(template, lang) {
   // 移除现有的hreflang标签（如果有的话）
   html = html.replace(/\s*<link rel="alternate" hreflang="[^"]*" href="[^"]*" \/>/g, '');
   
-  // 移除现有的语言检测脚本（如果有的话）
+  // 移除现有的语言检测脚本（如果有的话），但保留Google Analytics等其他脚本
   html = html.replace(/\s*<script>[\s\S]*?window\.__INITIAL_LANGUAGE__[\s\S]*?<\/script>/g, '');
   
   // 在</head>前插入hreflang标签

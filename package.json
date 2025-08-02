@@ -12,7 +12,14 @@
   "bugs": {
     "url": "https://github.com/sunhineyang/svgtopng/issues"
   },
-  "keywords": ["svg", "png", "converter", "browser", "privacy", "svgtopng.app"],
+  "keywords": [
+    "svg",
+    "png",
+    "converter",
+    "browser",
+    "privacy",
+    "svgtopng.app"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build && npm run build:multilang",
@@ -33,6 +40,7 @@
     "react-dom": "^18.3.1",
     "react-i18next": "^15.6.1",
     "react-router-dom": "^7.3.0",
+    "sharp": "^0.34.3",
     "tailwind-merge": "^3.0.2",
     "zustand": "^5.0.3"
   },
