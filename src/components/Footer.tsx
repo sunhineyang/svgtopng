@@ -7,7 +7,8 @@ import {
   Heart, 
   Lock,
   Zap,
-  Globe
+  Globe,
+  Mail
 } from 'lucide-react';
 
 interface FooterProps {
@@ -29,24 +30,24 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
             <div className="flex items-center space-x-2">
               <Shield className="w-5 h-5 text-secondary-500 dark:text-secondary-400" />
               <h2 className="text-base font-semibold text-neutral-800 dark:text-white">
-                Privacy First SVG to PNG Converter
+                {t('footer.privacy.title')}
               </h2>
             </div>
             
             <div className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
               <div className="flex items-start space-x-2">
                 <Lock className="w-4 h-4 mt-0.5 text-secondary-500 flex-shrink-0" />
-                <p>Secure svg to png conversion with complete privacy</p>
+                <p>{t('footer.privacy.secure')}</p>
               </div>
               
               <div className="flex items-start space-x-2">
                 <Zap className="w-4 h-4 mt-0.5 text-primary-500 flex-shrink-0" />
-                <p>No file uploads - svg to png online processing locally</p>
+                <p>{t('footer.privacy.noUploads')}</p>
               </div>
               
               <div className="flex items-start space-x-2">
                 <Globe className="w-4 h-4 mt-0.5 text-primary-600 flex-shrink-0" />
-                <p>Offline svg converter works without internet</p>
+                <p>{t('footer.privacy.offline')}</p>
               </div>
             </div>
           </div>
@@ -54,24 +55,24 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
           {/* 用户反馈和信息 */}
           <div className="space-y-3">
             <h2 className="text-base font-semibold text-neutral-800 dark:text-white">
-              Contact & Support
+              {t('footer.contact.title')}
             </h2>
             
             <div className="space-y-2">
               <div className="text-sm text-neutral-600 dark:text-neutral-400">
-                <p className="font-medium mb-2">Have questions or suggestions?</p>
+                <p className="font-medium mb-2">{t('footer.contact.question')}</p>
                 <a
                    href="mailto:0992sunshine@gmail.com?subject=SVG to PNG Converter - User Feedback"
                    className="inline-flex items-center space-x-2 px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded-lg transition-colors duration-200 shadow-brand"
                  >
                    <span>📧</span>
-                   <span>Contact Us</span>
+                   <span>{t('footer.contact.button')}</span>
                  </a>
               </div>
               
               <div className="text-xs text-neutral-500 dark:text-neutral-500">
-                <p>Built with React for fast svg to png conversion</p>
-                <p>Powered by HTML5 Canvas API for svg to image processing</p>
+                <p>{t('footer.tech.react')}</p>
+                <p>{t('footer.tech.canvas')}</p>
               </div>
             </div>
           </div>
@@ -82,26 +83,26 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
           <div className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
             {/* 版权信息 */}
             <div className="flex items-center space-x-4 text-sm text-neutral-500 dark:text-neutral-400">
-              <p>© {currentYear} SVG to PNG Converter - Free Online Tool</p>
+              <p>{t('footer.copyright', { year: currentYear })}</p>
               <span className="hidden sm:inline">•</span>
-              <p className="hidden sm:inline">Made with ❤️ for svg to image conversion</p>
+              <p className="hidden sm:inline">{t('footer.madeWith')}</p>
             </div>
             
             {/* 技术栈标签 */}
             <div className="flex items-center space-x-2">
               <div className="flex items-center space-x-1 px-2 py-1 bg-primary-100 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 rounded-full text-xs">
                 <Zap className="w-3 h-3" />
-                <span>Client-side</span>
+                <span>{t('footer.tags.clientSide')}</span>
               </div>
               
               <div className="flex items-center space-x-1 px-2 py-1 bg-secondary-100 dark:bg-secondary-900/20 text-secondary-700 dark:text-secondary-300 rounded-full text-xs">
                 <Shield className="w-3 h-3" />
-                <span>Privacy-first</span>
+                <span>{t('footer.tags.privacyFirst')}</span>
               </div>
               
               <div className="flex items-center space-x-1 px-2 py-1 bg-primary-100 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 rounded-full text-xs">
                 <Globe className="w-3 h-3" />
-                <span>No servers</span>
+                <span>{t('footer.tags.noServers')}</span>
               </div>
             </div>
           </div>
@@ -113,12 +114,10 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
             <Shield className="w-5 h-5 text-primary-600 dark:text-primary-400 mt-0.5 flex-shrink-0" />
             <div className="text-sm">
               <p className="font-medium text-primary-900 dark:text-primary-100 mb-1">
-                🔒 Your Privacy is Protected During SVG to PNG Conversion
+                {t('footer.privacyNotice.title')}
               </p>
               <p className="text-primary-700 dark:text-primary-300">
-                This svg to png online tool runs entirely in your browser using modern web technologies. 
-                No SVG files or converted PNG images are ever sent to any server. 
-                All svg to image processing happens locally on your device, ensuring complete privacy and security for your svg converter needs.
+                {t('footer.privacyNotice.description')}
               </p>
             </div>
           </div>

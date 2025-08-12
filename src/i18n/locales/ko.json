@@ -6,10 +6,16 @@
     "code": "SVG 코드를 PNG로"
   },
   "upload": {
-    "dragDrop": "SVG 파일을 여기에 드래그하세요",
-    "clickSelect": "또는 클릭하여 파일 선택",
-    "supportedFormats": "지원 형식: .svg 파일 (각각 최대 10MB)",
-    "maxFiles": "한 번에 최대 20개 파일"
+    "title": "PNG 변환을 위한 SVG 파일 업로드",
+    "description": "SVG 파일을 드래그 앤 드롭하여 즉시 SVG를 PNG로 변환하세요. 다중 파일 지원.",
+    "dragDrop": "SVG 파일을 드래그해서 즉시 PNG로 변환하세요",
+    "clickSelect": "또는 클릭하여 변환할 SVG 파일을 선택하세요",
+    "supportedFormats": "지원 형식: SVG 파일 (PNG 변환용)",
+    "maxFiles": "최대 SVG 파일 수: 20개",
+    "widthLabel": "너비",
+    "heightLabel": "높이",
+    "maintainAspectRatio": "비율 유지",
+    "keepTransparentBg": "투명 배경 유지"
   },
   "codeEditor": {
     "placeholder": "SVG 코드를 여기에 붙여넣으세요...",
@@ -21,19 +27,53 @@
     "title": "변환 설정",
     "width": "너비",
     "height": "높이",
-    "quality": "품질",
+    "qualityLabel": "품질",
     "transparentBg": "투명 배경 유지",
     "highRes": "고해상도 출력",
     "customSize": "사용자 정의 크기",
-    "maintainRatio": "비율 유지"
+    "maintainRatio": "비율 유지",
+    "sizePresets": "크기 프리셋",
+    "scaleFactor": "배율",
+    "auto": "자동",
+    "presets": {
+      "original": "원본",
+      "small": "소형",
+      "medium": "중형",
+      "large": "대형",
+      "hd": "HD",
+      "fourK": "4K"
+    },
+    "quality": {
+      "low": "낮음",
+      "medium": "보통",
+      "high": "높음",
+      "best": "최고",
+      "lowLabel": "낮음 (0.1)",
+      "bestLabel": "최고 (1.0)"
+    },
+    "tips": {
+      "title": "팁:",
+      "dimensions": "너비/높이를 비워두면 원본 SVG 치수를 사용합니다",
+      "quality": "높은 품질 = 큰 파일 크기",
+      "scale": "배율은 최종 출력 크기를 곱합니다",
+      "transparency": "투명 배경은 SVG 투명도를 보존합니다"
+    }
   },
-  "preview": {
+   "preview": {
     "title": "미리보기",
     "original": "원본 SVG",
     "converted": "PNG 미리보기",
     "size": "크기",
     "dimensions": "치수",
-    "convertHint": "\"PNG로 변환\" 버튼을 클릭하여 변환 결과를 확인하세요"
+    "convertHint": "\"PNG로 변환\" 버튼을 클릭하여 변환 결과를 확인하세요",
+    "noFiles": "미리보기할 파일이 없습니다",
+    "uploadFiles": "SVG 파일을 업로드하여 미리보기를 확인하세요",
+    "background": {
+      "label": "배경",
+      "transparent": "투명",
+      "white": "흰색",
+      "black": "검은색"
+    }
   },
   "buttons": {
     "convert": "PNG로 변환",
@@ -41,22 +81,38 @@
     "downloadAll": "모두 다운로드",
     "clear": "모두 지우기",
     "addMore": "파일 더 추가",
-    "retry": "다시 시도"
+    "retry": "다시 시도",
+    "enterValidSvg": "유효한 SVG 코드를 입력하세요",
+    "uploadSvgFiles": "SVG 파일을 업로드하세요",
+    "tips": {
+      "title": "팁:",
+      "browserProcessing": "모든 처리는 브라우저에서 이루어지며 서버에 파일이 업로드되지 않습니다",
+      "zipDownload": "여러 파일은 ZIP 아카이브로 다운로드됩니다",
+      "adjustSettings": "위 설정을 조정하여 출력 품질과 크기를 사용자 정의하세요"
+    }
   },
   "status": {
     "ready": "준비됨",
     "converting": "변환 중...",
     "completed": "완료됨",
     "error": "오류",
-    "validating": "검증 중..."
+    "validating": "검증 중...",
+    "oneSvgReady": "SVG 1개 준비됨",
+    "noSvgCode": "SVG 코드 없음",
+    "noFilesUploaded": "업로드된 파일 없음",
+    "filesStatus": "{{ready}}개 준비됨, {{completed}}개 완료됨",
+    "conversionCompleted": "변환 완료",
+    "successfulCount": "{{count}}개 성공",
+    "failedCount": "{{count}}개 실패",
+    "filesDownloaded": "파일이 자동으로 다운로드되었습니다"
   },
   "errors": {
-    "invalidSvg": "잘못된 SVG 형식",
-    "fileTooLarge": "파일이 너무 큼 (최대 10MB)",
-    "unsupportedFormat": "지원되지 않는 파일 형식",
-    "conversionFailed": "변환 실패",
-    "noFiles": "선택된 파일 없음",
-    "browserNotSupported": "지원되지 않는 브라우저"
+    "invalidSvg": "올바르지 않은 SVG 형식입니다",
+    "fileTooLarge": "파일 크기가 너무 큽니다 (최대 10MB)",
+    "unsupportedFormat": "지원하지 않는 파일 형식입니다",
+    "conversionFailed": "SVG를 PNG로 변환하는데 실패했습니다",
+    "noFiles": "변환할 파일이 선택되지 않았습니다",
+    "browserNotSupported": "현재 브라우저에서는 지원되지 않습니다"
   },
   "languages": {
     "en": "English",
@@ -70,9 +126,32 @@
     "system": "시스템"
   },
   "footer": {
-    "privacy": "모든 처리는 브라우저에서 로컬로 수행됩니다",
-    "noUpload": "어떤 파일도 서버에 업로드되지 않습니다",
-    "openSource": "오픈 소스"
+    "privacy": {
+      "title": "프라이버시 우선 SVG PNG 변환기",
+      "secure": "완전한 프라이버시로 안전한 SVG PNG 변환",
+      "noUploads": "파일 업로드 없음 - SVG PNG 온라인 처리가 로컬에서 수행",
+      "offline": "오프라인 SVG 변환기는 인터넷 없이 작동"
+    },
+    "contact": {
+      "title": "연락처 및 지원",
+      "question": "질문이나 제안이 있으신가요?",
+      "button": "문의하기"
+    },
+    "tech": {
+      "react": "빠른 SVG PNG 변환을 위해 React로 구축",
+      "canvas": "SVG 이미지 처리를 위한 HTML5 Canvas API 지원"
+    },
+    "copyright": "© {{year}} SVG PNG 변환기 - 무료 온라인 도구",
+    "madeWith": "SVG 이미지 변환을 위해 ❤️로 제작",
+    "tags": {
+      "clientSide": "클라이언트 측",
+      "privacyFirst": "프라이버시 우선",
+      "noServers": "서버 없음"
+    },
+    "privacyNotice": {
+      "title": "🔒 SVG PNG 변환 중 귀하의 프라이버시가 보호됩니다",
+      "description": "이 SVG PNG 온라인 도구는 최신 웹 기술을 사용하여 브라우저에서 완전히 실행됩니다. SVG 파일이나 변환된 PNG 이미지가 서버로 전송되지 않습니다. 모든 SVG 이미지 처리는 장치에서 로컬로 수행되어 SVG 변환기 요구 사항에 대한 완전한 프라이버시와 보안을 보장합니다."
+    }
   },
   "help": "도움이 필요하신가요?",
   "gallery": {
@@ -128,12 +207,175 @@
       }
     }
   },
+  "hero": {
+    "title": "무료 SVG PNG 변환기",
+    "description": "SVG 파일을 아래에 드롭하면 최고의 온라인 변환기가 즉시 선명한 PNG로 변환해드립니다—업로드 없이 완전 무료.",
+    "features": {
+      "free": "무료 변환기",
+      "noAds": "광고 없음",
+      "noRegistration": "회원가입 불필요"
+    }
+  },
+
+  "codeEditor": {
+    "title": "PNG 변환을 위한 SVG 코드 편집기",
+    "description": "SVG 코드를 직접 붙여넣어 온라인 SVG를 PNG로 변환",
+    "placeholder": "여기에 SVG 코드를 붙여넣으세요...",
+    "example": "예제",
+    "clear": "지우기",
+    "formatTitle": "코드 포맷 (Shift+Alt+F)",
+    "helpText": "💡 \"{{exampleText}}\"를 클릭하여 샘플 SVG 코드를 확인하세요"
+  },
+  "conversion": {
+    "title": "변환 설정",
+    "description": "아래 버튼을 클릭하여 SVG를 PNG로 변환 과정을 시작하세요."
+  },
+  "features": {
+    "title": "SVG PNG 변환 기능",
+    "batch": {
+      "title": "일괄 SVG PNG 변환 지원",
+      "description": "효율성 향상을 위해 여러 SVG 파일을 PNG 형식으로 동시에 변환"
+    },
+    "custom": {
+      "title": "사용자 정의 PNG 크기 및 품질",
+      "description": "출력 PNG 치수, 품질 및 투명도 옵션에 대한 유연한 설정"
+    },
+    "preview": {
+      "title": "실시간 SVG 미리보기",
+      "description": "변환 전 SVG 효과를 실시간으로 미리보기하여 예상 결과 확인"
+    },
+    "editor": {
+      "title": "SVG 코드 편집기",
+      "description": "직접 편집 지원이 포함된 구문 강조 SVG 코드 편집기"
+    },
+    "multilang": {
+      "title": "다국어 지원",
+      "description": "전 세계 편리한 변환 경험을 위한 다국어 인터페이스 지원"
+    },
+    "theme": {
+      "title": "다크/라이트 테마",
+      "description": "다양한 환경에 적응하기 위한 다크 및 라이트 테마 전환 지원"
+    }
+  },
+  "howToUse": {
+    "title": "SVG PNG 변환기 사용 방법",
+    "uploadMode": {
+      "title": "SVG PNG 파일 업로드 모드",
+      "step1": "즉시 SVG PNG 변환을 위해 SVG 파일을 드래그 앤 드롭",
+      "step2": "여러 SVG 파일을 PNG 형식으로 변환 (최대 20개)",
+      "step3": "최대 파일 크기: SVG 파일당 10MB",
+      "step4": "일괄 SVG 이미지 변환 및 ZIP으로 다운로드"
+    },
+    "codeMode": {
+      "title": "PNG 변환을 위한 SVG 코드 편집기",
+      "step1": "온라인 SVG PNG 변환을 위해 SVG 코드를 직접 붙여넣기",
+      "step2": "실시간 SVG 구문 강조 및 검증",
+      "step3": "SVG를 PNG로 변환하기 전 실시간 미리보기",
+      "step4": "예제 템플릿이 포함된 내장 SVG 변환기"
+    },
+    "steps": {
+      "title": "SVG PNG 변환 단계",
+      "step1": {
+        "title": "SVG 설정 구성",
+        "description": "PNG 크기, 품질 및 변환 옵션 설정"
+      },
+      "step2": {
+        "title": "미리보기 및 SVG 변환",
+        "description": "SVG 미리보기 확인 및 SVG PNG 변환 시작"
+      },
+      "step3": {
+        "title": "PNG 파일 다운로드",
+        "description": "변환된 PNG 파일이 자동으로 다운로드됩니다"
+      }
+    }
+  },
+  "gallery": {
+    "title": "SVG PNG 변환 갤러리",
+    "subtitle": "다양한 SVG 그래픽이 고품질 PNG 이미지로 변환되는 방법을 확인하세요. \"코드\"를 클릭하여 SVG 소스를 확인하세요.",
+    "buttons": {
+      "preview": "미리보기",
+      "code": "코드"
+    },
+    "labels": {
+      "svgOriginal": "SVG 원본:",
+      "pngResult": "PNG 결과:"
+    },
+    "examples": {
+      "simpleIcon": {
+        "name": "간단한 아이콘",
+        "description": "파란색 원형 배경의 간단한 체크 아이콘",
+        "size": "100x100"
+      },
+      "logoDesign": {
+        "name": "로고 디자인",
+        "description": "둥근 사각형과 강조 원이 있는 브랜드 로고",
+        "size": "120x80"
+      },
+      "chartElement": {
+        "name": "차트 요소",
+        "description": "여러 데이터 포인트가 있는 막대 차트 시각화",
+        "size": "150x100"
+      },
+      "format": "SVG → PNG"
+    },
+    "tryItOut": "직접 해보세요!",
+    "tryDescription": "위에서 자신만의 SVG 파일을 업로드하거나 SVG 코드를 붙여넣어 동일한 정밀도와 선명도로 고품질 PNG 이미지로 변환하세요."
+  },
+  "faq": {
+    "title": "자주 묻는 질문",
+    "subtitle": "SVG PNG 변환에 대해 알아야 할 모든 것",
+    "stillHaveQuestions": "아직 궁금한 점이 있으신가요?",
+    "contactDescription": "SVG PNG 변환에 대한 추가 도움이 필요하거나 저희 도구에 대한 구체적인 질문이 있으시면 언제든지 연락해 주세요.",
+    "contactUs": "지원팀 문의",
+    "questions": {
+      "q1": {
+        "question": "SVG PNG 변환이란 무엇인가요?",
+        "answer": "SVG PNG 변환은 벡터 기반 SVG(Scalable Vector Graphics) 파일을 래스터 기반 PNG(Portable Network Graphics) 이미지로 변환합니다. 이 과정은 수학적 모양과 경로를 픽셀 기반 이미지로 변환하여 SVG 형식을 지원하지 않을 수 있는 더 많은 애플리케이션 및 플랫폼과 호환되도록 합니다."
+      },
+      "q2": {
+        "question": "SVG란 무엇인가요?",
+        "answer": "SVG는 Scalable Vector Graphics의 약자입니다. 기술 도면, 차트, 로고 및 일러스트레이션에 널리 사용되는 벡터 그래픽의 업계 표준 형식입니다. SVG 파일은 픽셀이 아닌 수학적 노드, 선, 모양 및 곡선으로 구성됩니다. 벡터 이미지는 수백만 개의 개별 픽셀이 아닌 좌표에서 그려지므로 파일 크기가 일반적으로 더 작고 품질 손실 없이 모든 크기로 확장할 수 있습니다."
+      },
+      "q3": {
+        "question": "PNG란 무엇인가요?",
+        "answer": "PNG는 Portable Network Graphics의 약자입니다. JPEG와 달리 PNG는 무손실 압축을 사용하고 투명도를 지원하므로 선명한 가장자리와 투명한 배경이 필요한 이미지에 이상적입니다. 그러나 무손실 압축으로 인해 PNG 파일 크기는 JPEG보다 클 수 있습니다. PNG는 웹사이트 이미지, 로고 및 그래픽에 완벽하지만 파일 크기가 크기 때문에 고해상도 사진에는 최적이 아닙니다."
+      },
+      "q4": {
+        "question": "왜 SVG를 PNG로 변환하나요?",
+        "answer": "SVG를 PNG로 변환하는 것은 많은 시나리오에서 유용합니다: 1) 호환성 - PNG는 거의 모든 이미지 뷰어와 웹 브라우저에서 지원되지만 일부 애플리케이션에서는 SVG 지원이 제한될 수 있습니다. 2) 이메일 첨부 - 많은 이메일 클라이언트가 PNG 이미지를 직접 표시하지만 SVG 파일은 렌더링하지 않을 수 있습니다. 3) 소셜 미디어 - 대부분의 소셜 플랫폼은 이미지 업로드에 PNG/JPEG를 선호합니다. 4) 인쇄 자료 - PNG는 인쇄에 일관된 출력을 제공하지만 SVG 렌더링은 애플리케이션마다 다를 수 있습니다."
+      },
+      "q5": {
+        "question": "SVG PNG 변환은 어떻게 작동하나요?",
+        "answer": "저희 SVG PNG 변환기는 HTML5 Canvas 기술을 사용하여 브라우저에서 완전히 작동합니다. 과정은 다음과 같습니다: 1) SVG 파일 또는 코드 로드, 2) 캔버스 요소에 SVG 그래픽 렌더링, 3) 캔버스 내용을 PNG 형식으로 변환, 4) 다운로드용 PNG 파일 제공. 이 방법은 외부 서버에 데이터가 업로드되지 않으므로 파일을 안전하게 유지하면서 고품질 출력을 보장합니다."
+      },
+      "q6": {
+        "question": "변환 품질이 좋나요?",
+        "answer": "네! 저희 변환기는 SVG 파일에서 고품질 PNG 이미지를 생성합니다. 원하는 품질 수준을 달성하기 위해 출력 해상도를 사용자 정의할 수 있습니다. 높은 해상도는 더 선명한 이미지를 만들지만 파일 크기가 커집니다. 변환은 원본 SVG의 색상, 투명도 및 시각적 세부 사항을 보존하여 웹 사용, 프레젠테이션 및 인쇄 자료에 적합한 전문적인 결과를 보장합니다."
+      },
+      "q7": {
+        "question": "여러 SVG 파일을 한 번에 변환할 수 있나요?",
+        "answer": "물론입니다! 저희 도구는 일괄 변환을 지원하여 여러 SVG 파일을 PNG 형식으로 동시에 업로드하고 변환할 수 있습니다. 한 번에 최대 20개의 SVG 파일을 업로드할 수 있으며, 각각 최대 크기는 10MB입니다. 변환 후 모든 PNG 파일이 편리한 ZIP 아카이브로 패키지되어 쉽게 다운로드할 수 있습니다."
+      },
+      "q8": {
+        "question": "변환 중 데이터가 안전한가요?",
+        "answer": "네, 데이터가 완전히 안전합니다. 저희 SVG PNG 변환기는 브라우저 내에서 완전히 작동합니다 - 파일이 서버에 업로드되지 않습니다. 모든 변환 처리는 클라이언트 측 JavaScript를 사용하여 장치에서 로컬로 수행됩니다. 이는 SVG 파일이 컴퓨터를 떠나지 않음을 의미하여 그래픽과 디자인의 완전한 개인 정보 보호와 보안을 보장합니다."
+      },
+      "q9": {
+        "question": "어떤 SVG 기능이 지원되나요?",
+        "answer": "저희 변환기는 대부분의 표준 SVG 기능을 지원합니다: 기본 모양(사각형, 원, 경로), 텍스트 요소, 그라디언트, 패턴, 변환 및 투명도. 애니메이션, 대화형 요소 및 외부 참조와 같은 복잡한 기능은 PNG가 정적 이미지 형식이므로 PNG 출력에서 보존되지 않을 수 있습니다."
+      },
+      "q10": {
+        "question": "PNG 출력 설정을 사용자 정의할 수 있나요?",
+        "answer": "네! PNG 출력의 여러 측면을 사용자 정의할 수 있습니다: 1) 해상도/크기 - 출력 PNG의 사용자 정의 너비와 높이 설정, 2) 품질 - 압축 대 품질 수준 선택, 3) 배경 - 투명도 유지 또는 단색 배경색 설정, 4) 크기 조정 - 종횡비 유지 또는 지정된 치수에 맞게 늘이기. 이러한 옵션을 통해 최종 PNG 결과를 완전히 제어할 수 있습니다."
+      }
+    }
+  },
   "cta": {
-    "title": "SVG 파일을 변환할 준비가 되셨나요?",
-    "description": "벡터 그래픽을 고품질 PNG 이미지로 즉시 변환하세요. 회원가입 불필요, 완전 무료, 파일은 안전하게 보호됩니다.",
-    "startConverting": "지금 변환 시작하기",
-    "feature1": "업로드 불필요",
-    "feature2": "일괄 변환",
-    "feature3": "고품질"
+    "title": "지금 바로 SVG 파일을 PNG로 변환해보세요!",
+    "description": "벡터 그래픽을 고품질 PNG 이미지로 즉시 변환하세요. 회원가입 없이 완전 무료로 이용 가능하며, 모든 파일은 안전하게 보호됩니다.",
+    "startConverting": "무료 변환 시작하기",
+    "feature1": "서버 업로드 불필요",
+    "feature2": "대량 일괄 변환",
+    "feature3": "최고 품질 보장"
   }
 }

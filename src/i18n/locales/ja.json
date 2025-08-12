@@ -6,10 +6,16 @@
     "code": "SVGコードをPNGに"
   },
   "upload": {
-    "dragDrop": "SVGファイルをここにドラッグ",
-    "clickSelect": "またはクリックしてファイルを選択",
-    "supportedFormats": "対応形式: .svgファイル（各最大10MB）",
-    "maxFiles": "一度に最大20ファイル"
+    "title": "PNG変換用SVGファイルアップロード",
+    "description": "SVGファイルをドラッグ&ドロップして即座にSVGからPNGへ変換。複数ファイル対応。",
+    "dragDrop": "SVGファイルをドラッグして即座にPNG変換",
+    "clickSelect": "またはクリックして変換するSVGファイルを選択",
+    "supportedFormats": "対応形式: SVGファイル（PNG変換用）",
+    "maxFiles": "最大SVGファイル数: 20個",
+    "widthLabel": "PNG幅 (px)",
+    "heightLabel": "PNG高さ (px)",
+    "maintainAspectRatio": "縦横比を維持",
+    "keepTransparentBg": "透明背景を保持"
   },
   "codeEditor": {
     "placeholder": "SVGコードをここに貼り付けてください...",
@@ -19,13 +25,39 @@
   },
   "settings": {
     "title": "変換設定",
+    "sizePresets": "サイズプリセット",
     "width": "幅",
     "height": "高さ",
-    "quality": "品質",
+    "qualityLabel": "品質",
+    "scaleFactor": "スケール係数",
     "transparentBg": "透明背景を保持",
     "highRes": "高解像度出力",
     "customSize": "カスタムサイズ",
-    "maintainRatio": "縦横比を維持"
+    "maintainRatio": "縦横比を維持",
+    "auto": "自動",
+    "presets": {
+      "original": "オリジナル",
+      "small": "小",
+      "medium": "中",
+      "large": "大",
+      "hd": "HD",
+      "fourK": "4K"
+    },
+    "quality": {
+      "low": "低",
+      "medium": "中",
+      "high": "高",
+      "best": "最高",
+      "lowLabel": "低 (0.1)",
+      "bestLabel": "最高 (1.0)"
+    },
+    "tips": {
+      "title": "ヒント:",
+      "dimensions": "幅/高さを空にすると元のSVGサイズを使用します",
+      "quality": "高品質 = 大きなファイルサイズ",
+      "scale": "スケール係数は最終出力サイズに乗算されます",
+      "transparency": "透明背景はSVGの透明度を保持します"
+    }
   },
   "preview": {
     "title": "プレビュー",
@@ -33,7 +65,15 @@
     "converted": "PNGプレビュー",
     "size": "サイズ",
     "dimensions": "寸法",
-    "convertHint": "\"PNGに変換\"をクリックして変換結果を確認してください"
+    "convertHint": "\"PNGに変換\"をクリックして変換結果を確認してください",
+    "background": {
+      "label": "背景",
+      "transparent": "透明",
+      "white": "白",
+      "black": "黒"
+    },
+    "noFiles": "プレビューするファイルがありません",
+    "uploadFiles": "SVGファイルをアップロードしてプレビューを確認してください"
   },
   "buttons": {
     "convert": "PNGに変換",
@@ -41,22 +81,38 @@
     "downloadAll": "すべてダウンロード",
     "clear": "すべてクリア",
     "addMore": "ファイルを追加",
-    "retry": "再試行"
+    "retry": "再試行",
+    "enterValidSvg": "有効なSVGコードを入力してください",
+    "uploadSvgFiles": "SVGファイルをアップロードしてください",
+    "tips": {
+      "title": "ヒント：",
+      "browserProcessing": "すべての処理はブラウザで行われ、サーバーにファイルがアップロードされることはありません",
+      "zipDownload": "複数のファイルはZIPアーカイブとしてダウンロードされます",
+      "adjustSettings": "上記の設定を調整して、出力品質とサイズをカスタマイズしてください"
+    }
   },
   "status": {
     "ready": "準備完了",
     "converting": "変換中...",
     "completed": "完了",
     "error": "エラー",
-    "validating": "検証中..."
+    "validating": "検証中...",
+    "oneSvgReady": "SVG 1個準備完了",
+    "noSvgCode": "SVGコードがありません",
+    "noFilesUploaded": "アップロードされたファイルがありません",
+    "filesStatus": "{{ready}}個準備完了、{{completed}}個完了",
+    "conversionCompleted": "変換完了",
+    "successfulCount": "{{count}}個成功",
+    "failedCount": "{{count}}個失敗",
+    "filesDownloaded": "ファイルが自動的にダウンロードされました"
   },
   "errors": {
-    "invalidSvg": "無効なSVG形式",
-    "fileTooLarge": "ファイルが大きすぎます（最大10MB）",
-    "unsupportedFormat": "サポートされていないファイル形式",
-    "conversionFailed": "変換に失敗しました",
-    "noFiles": "ファイルが選択されていません",
-    "browserNotSupported": "サポートされていないブラウザ"
+    "invalidSvg": "正しくないSVG形式です",
+    "fileTooLarge": "ファイルサイズが大きすぎます（最大10MB）",
+    "unsupportedFormat": "対応していないファイル形式です",
+    "conversionFailed": "SVGからPNGへの変換に失敗しました",
+    "noFiles": "変換するファイルが選択されていません",
+    "browserNotSupported": "お使いのブラウザでは対応していません"
   },
   "languages": {
     "en": "English",
@@ -70,9 +126,32 @@
     "system": "システム"
   },
   "footer": {
-    "privacy": "すべての処理はブラウザでローカルに実行されます",
-    "noUpload": "ファイルはサーバーにアップロードされません",
-    "openSource": "オープンソース"
+    "privacy": {
+      "title": "プライバシー優先SVG PNG変換ツール",
+      "secure": "完全なプライバシーで安全なSVG PNG変換",
+      "noUploads": "ファイルアップロードなし - SVG PNG オンライン処理がローカルで実行",
+      "offline": "オフラインSVG変換ツールはインターネットなしで動作"
+    },
+    "contact": {
+      "title": "お問い合わせ・サポート",
+      "question": "ご質問やご提案はありますか？",
+      "button": "お問い合わせ"
+    },
+    "tech": {
+      "react": "高速SVG PNG変換のためReactで構築",
+      "canvas": "SVG画像処理のためHTML5 Canvas APIを活用"
+    },
+    "copyright": "© {{year}} SVG PNG変換ツール - 無料オンラインツール",
+    "madeWith": "SVG画像変換のため❤️で制作",
+    "tags": {
+      "clientSide": "クライアントサイド",
+      "privacyFirst": "プライバシー優先",
+      "noServers": "サーバーなし"
+    },
+    "privacyNotice": {
+      "title": "🔒 SVG PNG変換中にあなたのプライバシーが保護されます",
+      "description": "このSVG PNG オンラインツールは最新のWeb技術を使用してブラウザで完全に実行されます。SVGファイルや変換されたPNG画像がサーバーに送信されることはありません。すべてのSVG画像処理はデバイス上でローカルに実行され、SVG変換ツールのニーズに対する完全なプライバシーとセキュリティを保証します。"
+    }
   },
   "help": "ヘルプが必要ですか？",
   "gallery": {
@@ -128,12 +207,174 @@
       }
     }
   },
+  "hero": {
+    "title": "無料SVG PNG変換ツール",
+    "description": "SVGファイルを下にドロップすると、最高のオンライン変換ツールが即座に鮮明なPNGに変換します—アップロード不要で完全無料。",
+    "features": {
+      "free": "無料変換ツール",
+      "noAds": "広告なし",
+      "noRegistration": "登録不要"
+    }
+  },
+  "codeEditor": {
+    "title": "PNG変換用SVGコードエディタ",
+    "description": "SVGコードを直接貼り付けてオンラインSVGからPNG変換",
+    "placeholder": "ここにSVGコードを貼り付けてください...",
+    "example": "例",
+    "clear": "クリア",
+    "formatTitle": "コードフォーマット (Shift+Alt+F)",
+    "helpText": "💡 \"{{exampleText}}\"をクリックしてサンプルSVGコードを確認してください"
+  },
+  "conversion": {
+    "title": "変換設定",
+    "description": "下のボタンをクリックしてSVGからPNGへの変換プロセスを開始してください。"
+  },
+  "features": {
+    "title": "SVG PNG変換機能",
+    "batch": {
+      "title": "一括SVG PNG変換サポート",
+      "description": "効率向上のため複数のSVGファイルをPNG形式に同時変換"
+    },
+    "custom": {
+      "title": "カスタムPNGサイズと品質",
+      "description": "出力PNG寸法、品質、透明度オプションの柔軟な設定"
+    },
+    "preview": {
+      "title": "リアルタイムSVGプレビュー",
+      "description": "変換前にSVG効果をリアルタイムでプレビューして期待される結果を確認"
+    },
+    "editor": {
+      "title": "SVGコードエディタ",
+      "description": "直接編集サポート付きの構文ハイライトSVGコードエディタ"
+    },
+    "multilang": {
+      "title": "多言語サポート",
+      "description": "世界中で便利な変換体験のための多言語インターフェースサポート"
+    },
+    "theme": {
+      "title": "ダーク/ライトテーマ",
+      "description": "異なる環境に適応するためのダークとライトテーマ切り替えサポート"
+    }
+  },
+  "howToUse": {
+    "title": "SVG PNG変換ツールの使用方法",
+    "uploadMode": {
+      "title": "SVG PNGファイルアップロードモード",
+      "step1": "即座にSVG PNG変換のためSVGファイルをドラッグ&ドロップ",
+      "step2": "複数のSVGファイルをPNG形式に変換（最大20個）",
+      "step3": "最大ファイルサイズ：SVGファイル1個あたり10MB",
+      "step4": "一括SVG画像変換とZIPダウンロード"
+    },
+    "codeMode": {
+      "title": "PNG変換用SVGコードエディタ",
+      "step1": "オンラインSVG PNG変換のためSVGコードを直接貼り付け",
+      "step2": "リアルタイムSVG構文ハイライトと検証",
+      "step3": "SVGからPNGに変換する前のライブプレビュー",
+      "step4": "サンプルテンプレート付き内蔵SVG変換ツール"
+    },
+    "steps": {
+      "title": "SVG PNG変換ステップ",
+      "step1": {
+        "title": "SVG設定の構成",
+        "description": "PNGサイズ、品質、変換オプションを設定"
+      },
+      "step2": {
+        "title": "プレビュー&SVG変換",
+        "description": "SVGプレビューを確認してSVG PNG変換を開始"
+      },
+      "step3": {
+        "title": "PNGファイルダウンロード",
+        "description": "変換されたPNGファイルが自動的にダウンロードされます"
+      }
+    }
+  },
+  "gallery": {
+    "title": "SVG PNG変換ギャラリー",
+    "subtitle": "さまざまなSVGグラフィックが高品質PNG画像に変換される様子をご覧ください。\"コード\"をクリックしてSVGソースを表示。",
+    "buttons": {
+      "preview": "プレビュー",
+      "code": "コード"
+    },
+    "labels": {
+      "svgOriginal": "SVGオリジナル：",
+      "pngResult": "PNG結果："
+    },
+    "examples": {
+      "simpleIcon": {
+        "name": "シンプルアイコン",
+        "description": "青い円形背景のシンプルなチェックアイコン",
+        "size": "100x100"
+      },
+      "logoDesign": {
+        "name": "ロゴデザイン",
+        "description": "角丸長方形とアクセント円のあるブランドロゴ",
+        "size": "120x80"
+      },
+      "chartElement": {
+        "name": "チャート要素",
+        "description": "複数のデータポイントを持つ棒グラフ可視化",
+        "size": "150x100"
+      },
+      "format": "SVG → PNG"
+    },
+    "tryItOut": "ぜひお試しください！",
+    "tryDescription": "上記で独自のSVGファイルをアップロードするか、SVGコードを貼り付けて、同じ精度と鮮明さで高品質PNG画像に変換してください。"
+  },
+  "faq": {
+    "title": "よくある質問",
+    "subtitle": "SVG PNG変換について知っておくべきすべて",
+    "stillHaveQuestions": "まだご質問がありますか？",
+    "contactDescription": "SVG PNG変換についてさらにサポートが必要な場合、または当ツールについて具体的なご質問がある場合は、お気軽にお問い合わせください。",
+    "contactUs": "サポートチームに連絡",
+    "questions": {
+      "q1": {
+        "question": "SVG PNG変換とは何ですか？",
+        "answer": "SVG PNG変換は、ベクターベースのSVG（Scalable Vector Graphics）ファイルをラスターベースのPNG（Portable Network Graphics）画像に変換します。このプロセスは数学的な形状とパスをピクセルベースの画像に変換し、SVG形式をサポートしていない可能性のあるより多くのアプリケーションやプラットフォームと互換性を持たせます。"
+      },
+      "q2": {
+        "question": "SVGとは何ですか？",
+        "answer": "SVGはScalable Vector Graphicsの略です。技術図面、チャート、ロゴ、イラストレーションに人気のベクターグラフィックスの業界標準形式です。SVGファイルはピクセルではなく数学的ノード、線、形状、曲線で構成されています。ベクター画像は何百万もの個別ピクセルではなく座標から描画されるため、ファイルサイズは通常小さく、品質を失うことなく任意のサイズにスケールできます。"
+      },
+      "q3": {
+        "question": "PNGとは何ですか？",
+        "answer": "PNGはPortable Network Graphicsの略です。JPEGとは異なり、PNGは可逆圧縮を使用し透明度をサポートするため、鮮明なエッジと透明な背景が必要な画像に理想的です。ただし、可逆圧縮のため、PNGファイルサイズはJPEGより大きくなる傾向があります。PNGはWebサイト画像、ロゴ、グラフィックスに最適ですが、ファイルサイズが大きいため高解像度写真には最適ではありません。"
+      },
+      "q4": {
+        "question": "なぜSVGをPNGに変換するのですか？",
+        "answer": "SVGをPNGに変換することは多くのシナリオで有用です：1）互換性 - PNGは事実上すべての画像ビューアとWebブラウザでサポートされていますが、一部のアプリケーションではSVGサポートが制限される場合があります。2）メール添付 - 多くのメールクライアントはPNG画像を直接表示しますが、SVGファイルはレンダリングしない場合があります。3）ソーシャルメディア - ほとんどのソーシャルプラットフォームは画像アップロードにPNG/JPEGを好みます。4）印刷物 - PNGは印刷に一貫した出力を提供しますが、SVGレンダリングはアプリケーション間で異なる場合があります。"
+      },
+      "q5": {
+        "question": "SVG PNG変換はどのように機能しますか？",
+        "answer": "私たちのSVG PNG変換ツールはHTML5 Canvas技術を使用してブラウザで完全に動作します。プロセスは次のとおりです：1）SVGファイルまたはコードの読み込み、2）キャンバス要素でのSVGグラフィックのレンダリング、3）キャンバス内容のPNG形式への変換、4）ダウンロード用PNGファイルの提供。この方法は外部サーバーにデータがアップロードされないため、ファイルを安全に保ちながら高品質出力を保証します。"
+      },
+      "q6": {
+        "question": "変換品質は良いですか？",
+        "answer": "はい！私たちの変換ツールはSVGファイルから高品質PNG画像を生成します。希望する品質レベルを達成するために出力解像度をカスタマイズできます。高解像度はより鮮明な画像を作成しますが、ファイルサイズが大きくなります。変換は元のSVGの色、透明度、視覚的詳細を保持し、Web使用、プレゼンテーション、印刷物に適したプロフェッショナルな結果を保証します。"
+      },
+      "q7": {
+        "question": "複数のSVGファイルを一度に変換できますか？",
+        "answer": "もちろんです！私たちのツールは一括変換をサポートし、複数のSVGファイルをPNG形式に同時にアップロードして変換できます。一度に最大20個のSVGファイルをアップロードでき、それぞれ最大サイズは10MBです。変換後、すべてのPNGファイルが便利なZIPアーカイブにパッケージされて簡単にダウンロードできます。"
+      },
+      "q8": {
+        "question": "変換中にデータは安全ですか？",
+        "answer": "はい、データは完全に安全です。私たちのSVG PNG変換ツールはブラウザ内で完全に動作します - ファイルがサーバーにアップロードされることはありません。すべての変換処理はクライアント側JavaScriptを使用してデバイス上でローカルに実行されます。これはSVGファイルがコンピュータを離れることがないことを意味し、グラフィックとデザインの完全なプライバシーとセキュリティを保証します。"
+      },
+      "q9": {
+        "question": "どのSVG機能がサポートされていますか？",
+        "answer": "私たちの変換ツールは標準的なSVG機能のほとんどをサポートしています：基本図形（長方形、円、パス）、テキスト要素、グラデーション、パターン、変換、透明度。アニメーション、インタラクティブ要素、外部参照などの複雑な機能は、PNGが静的画像形式であるため、PNG出力では保持されない場合があります。"
+      },
+      "q10": {
+        "question": "PNG出力設定をカスタマイズできますか？",
+        "answer": "はい！PNG出力のいくつかの側面をカスタマイズできます：1）解像度/サイズ - 出力PNGのカスタム幅と高さを設定、2）品質 - 圧縮対品質レベルを選択、3）背景 - 透明度を保持または単色背景色を設定、4）スケール - アスペクト比を維持または指定された寸法に合わせて伸縮。これらのオプションにより最終PNG結果を完全にコントロールできます。"
+      }
+    }
+  },
   "cta": {
-    "title": "SVGファイルを変換する準備はできましたか？",
-    "description": "ベクターグラフィックを高品質なPNG画像に即座に変換しましょう。登録不要、完全無料、ファイルは安全に保護されます。",
-    "startConverting": "今すぐ変換を開始",
-    "feature1": "アップロード不要",
-    "feature2": "一括変換",
-    "feature3": "高品質"
+    "title": "今すぐSVGファイルをPNGに変換してみませんか？",
+    "description": "ベクターグラフィックを高品質なPNG画像に即座に変換できます。会員登録不要で完全無料、すべてのファイルは安全に保護されます。",
+    "startConverting": "無料変換を開始する",
+    "feature1": "サーバーアップロード不要",
+    "feature2": "大量一括変換対応",
+    "feature3": "最高品質保証"
   }
 }

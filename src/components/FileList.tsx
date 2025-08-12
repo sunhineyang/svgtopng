@@ -189,7 +189,7 @@ export const FileList: React.FC<FileListProps> = ({ className = '' }) => {
         <!DOCTYPE html>
         <html>
         <head>
-          <title>SVG Preview - ${file.name}</title>
+          <title>${t('preview.title')} - ${file.name}</title>
           <style>
             body { 
               margin: 0; 
@@ -225,7 +225,7 @@ export const FileList: React.FC<FileListProps> = ({ className = '' }) => {
           <div class="container">
             <div class="header">
               <h2>${file.name}</h2>
-              <p>Size: ${SVGConverter.formatFileSize(file.size)}</p>
+              <p>${t('preview.size')}: ${SVGConverter.formatFileSize(file.size)}</p>
             </div>
             <div class="preview">
               ${file.content}
@@ -236,7 +236,7 @@ export const FileList: React.FC<FileListProps> = ({ className = '' }) => {
       `);
       previewWindow.document.close();
     }
-  }, []);
+  }, [t]);
   
   if (files.length === 0) {
     return null;

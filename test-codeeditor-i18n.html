@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeEditor i18n Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .language-selector {
+            margin-bottom: 20px;
+        }
+        .language-selector button {
+            margin: 5px;
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .language-selector button.active {
+            background: #007bff;
+            color: white;
+        }
+        .test-item {
+            margin: 10px 0;
+            padding: 10px;
+            border-left: 4px solid #007bff;
+            background: #f8f9fa;
+        }
+        .test-key {
+            font-weight: bold;
+            color: #333;
+        }
+        .test-value {
+            color: #666;
+            margin-top: 5px;
+        }
+        .status {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .status.pass {
+            background: #d4edda;
+            color: #155724;
+        }
+        .status.fail {
+            background: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <h1>CodeEditor 多语言测试页面</h1>
+    
+    <div class="language-selector">
+        <button onclick="testLanguage('en')" class="active" id="btn-en">English</button>
+        <button onclick="testLanguage('ko')" id="btn-ko">한국어</button>
+        <button onclick="testLanguage('ja')" id="btn-ja">日本語</button>
+        <button onclick="testLanguage('ru')" id="btn-ru">Русский</button>
+    </div>
+
+    <div class="test-section">
+        <h2>CodeEditor 翻译键测试</h2>
+        <div id="test-results"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>测试说明</h2>
+        <p>这个页面用于测试 CodeEditor 组件的多语言翻译功能。点击上方的语言按钮来切换不同语言，查看翻译键是否正确显示。</p>
+        <p><strong>测试的翻译键：</strong></p>
+        <ul>
+            <li>codeEditor.title - 代码编辑器标题</li>
+            <li>codeEditor.description - 代码编辑器描述</li>
+            <li>codeEditor.placeholder - 占位符文本</li>
+            <li>codeEditor.example - 示例按钮文本</li>
+            <li>codeEditor.clear - 清除按钮文本</li>
+            <li>codeEditor.formatTitle - 格式化按钮提示</li>
+            <li>codeEditor.helpText - 帮助信息文本</li>
+        </ul>
+    </div>
+
+    <script>
+        // 模拟翻译数据
+        const translations = {
+            en: {
+                "codeEditor.title": "SVG Code Editor for PNG Conversion",
+                "codeEditor.description": "Paste SVG code directly for svg to png online conversion",
+                "codeEditor.placeholder": "Paste your SVG code here...",
+                "codeEditor.example": "Example",
+                "codeEditor.clear": "Clear",
+                "codeEditor.formatTitle": "Format Code (Shift+Alt+F)",
+                "codeEditor.helpText": "💡 Click \"Example\" to see a sample SVG code"
+            },
+            ko: {
+                "codeEditor.title": "PNG 변환을 위한 SVG 코드 편집기",
+                "codeEditor.description": "SVG 코드를 직접 붙여넣어 온라인 SVG를 PNG로 변환",
+                "codeEditor.placeholder": "여기에 SVG 코드를 붙여넣으세요...",
+                "codeEditor.example": "예제",
+                "codeEditor.clear": "지우기",
+                "codeEditor.formatTitle": "코드 포맷 (Shift+Alt+F)",
+                "codeEditor.helpText": "💡 \"예제\"를 클릭하여 샘플 SVG 코드를 확인하세요"
+            },
+            ja: {
+                "codeEditor.title": "PNG変換用SVGコードエディタ",
+                "codeEditor.description": "SVGコードを直接貼り付けてオンラインSVGからPNG変換",
+                "codeEditor.placeholder": "ここにSVGコードを貼り付けてください...",
+                "codeEditor.example": "例",
+                "codeEditor.clear": "クリア",
+                "codeEditor.formatTitle": "コードフォーマット (Shift+Alt+F)",
+                "codeEditor.helpText": "💡 \"例\"をクリックしてサンプルSVGコードを確認してください"
+            },
+            ru: {
+                "codeEditor.title": "Редактор SVG кода для конвертации в PNG",
+                "codeEditor.description": "Вставьте SVG код напрямую для онлайн конвертации SVG в PNG",
+                "codeEditor.placeholder": "Вставьте ваш SVG код здесь...",
+                "codeEditor.example": "Пример",
+                "codeEditor.clear": "Очистить",
+                "codeEditor.formatTitle": "Форматировать код (Shift+Alt+F)",
+                "codeEditor.helpText": "💡 Нажмите \"Пример\" чтобы увидеть пример SVG кода"
+            }
+        };
+
+        const testKeys = [
+            'codeEditor.title',
+            'codeEditor.description', 
+            'codeEditor.placeholder',
+            'codeEditor.example',
+            'codeEditor.clear',
+            'codeEditor.formatTitle',
+            'codeEditor.helpText'
+        ];
+
+        function testLanguage(lang) {
+            // 更新按钮状态
+            document.querySelectorAll('.language-selector button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById(`btn-${lang}`).classList.add('active');
+
+            // 生成测试结果
+            const resultsDiv = document.getElementById('test-results');
+            resultsDiv.innerHTML = '';
+
+            const langData = translations[lang];
+            let passCount = 0;
+            let totalCount = testKeys.length;
+
+            testKeys.forEach(key => {
+                const testItem = document.createElement('div');
+                testItem.className = 'test-item';
+                
+                const hasTranslation = langData && langData[key];
+                const status = hasTranslation ? 'pass' : 'fail';
+                if (hasTranslation) passCount++;
+
+                testItem.innerHTML = `
+                    <div class="test-key">
+                        ${key} 
+                        <span class="status ${status}">${hasTranslation ? 'PASS' : 'FAIL'}</span>
+                    </div>
+                    <div class="test-value">
+                        ${hasTranslation ? langData[key] : '❌ 翻译缺失'}
+                    </div>
+                `;
+                
+                resultsDiv.appendChild(testItem);
+            });
+
+            // 添加总结
+            const summary = document.createElement('div');
+            summary.style.marginTop = '20px';
+            summary.style.padding = '15px';
+            summary.style.backgroundColor = passCount === totalCount ? '#d4edda' : '#fff3cd';
+            summary.style.border = `1px solid ${passCount === totalCount ? '#c3e6cb' : '#ffeaa7'}`;
+            summary.style.borderRadius = '4px';
+            summary.innerHTML = `
+                <strong>测试结果：</strong> ${passCount}/${totalCount} 通过 
+                ${passCount === totalCount ? '✅ 所有翻译键都存在' : '⚠️ 部分翻译键缺失'}
+            `;
+            resultsDiv.appendChild(summary);
+        }
+
+        // 初始化测试
+        testLanguage('en');
+    </script>
+</body>
+</html>

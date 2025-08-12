@@ -5,7 +5,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://traesvgtopng7eaf-0992sunshine-2698-sunshinyangs-projects.vercel.app/sitemap.xml
+Sitemap: https://svgtopng.app/sitemap.xml
 
 # Crawl-delay for polite crawling
 Crawl-delay: 1

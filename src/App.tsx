@@ -156,9 +156,9 @@ function App() {
       <section className="bg-neutral-50 dark:bg-neutral-900 py-8 border-b border-neutral-200 dark:border-neutral-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-3xl font-bold text-neutral-900 dark:text-neutral-50 mb-4">
-            Free SVG to PNG Converter
+            {t('hero.title', 'Free SVG to PNG Converter')}
           </h1>
-          <p className="text-lg text-neutral-600 dark:text-neutral-300 mb-6">Drop your SVGs below and let the best online converter instantly turn them into crisp PNGs—no uploads, completely free.</p>
+          <p className="text-lg text-neutral-600 dark:text-neutral-300 mb-6">{t('hero.description', 'Drop your SVGs below and let the best online converter instantly turn them into crisp PNGs—no uploads, completely free.')}</p>
           
           {/* 三个卖点 - 简化为水平排列 */}
           <div className="flex flex-wrap justify-center items-center gap-6 text-sm">
@@ -166,21 +166,21 @@ function App() {
               <span className="w-5 h-5 bg-secondary-100 dark:bg-secondary-900/20 rounded-full flex items-center justify-center">
                 <span className="text-xs">✓</span>
               </span>
-              <span className="font-medium">Free Converter</span>
+              <span className="font-medium">{t('hero.features.free', 'Free Converter')}</span>
             </div>
             
             <div className="flex items-center space-x-2 text-primary-600 dark:text-primary-400">
               <span className="w-5 h-5 bg-primary-100 dark:bg-primary-900/20 rounded-full flex items-center justify-center">
                 <span className="text-xs">✓</span>
               </span>
-              <span className="font-medium">No Ads</span>
+              <span className="font-medium">{t('hero.features.noAds', 'No Ads')}</span>
             </div>
             
             <div className="flex items-center space-x-2 text-primary-700 dark:text-primary-300">
               <span className="w-5 h-5 bg-primary-100 dark:bg-primary-900/20 rounded-full flex items-center justify-center">
                 <span className="text-xs">✓</span>
               </span>
-              <span className="font-medium">No Registration</span>
+              <span className="font-medium">{t('hero.features.noRegistration', 'No Registration')}</span>
             </div>
           </div>
         </div>
@@ -197,10 +197,10 @@ function App() {
                 <div className="bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6">
                   <div className="mb-4">
                     <h2 className="text-lg font-medium text-neutral-900 dark:text-neutral-50 mb-2">
-                      Upload SVG Files for PNG Conversion
+                      {t('upload.title', 'Upload SVG Files for PNG Conversion')}
                     </h2>
                     <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                      Drag and drop your SVG files for instant svg to png conversion. Support for multiple files.
+                      {t('upload.description', 'Drag and drop your SVG files for instant svg to png conversion. Support for multiple files.')}
                     </p>
                   </div>
                   <FileUpload />
@@ -214,10 +214,10 @@ function App() {
               <div className="bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6">
                 <div className="mb-4">
                   <h2 className="text-lg font-medium text-neutral-900 dark:text-neutral-50 mb-2">
-                    SVG Code Editor for PNG Conversion
+                    {t('codeEditor.title', 'SVG Code Editor for PNG Conversion')}
                   </h2>
                   <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                    Paste your SVG code directly for svg to png conversion. Real-time validation included.
+                    {t('codeEditor.description', 'Paste your SVG code directly for svg to png conversion. Real-time validation included.')}
                   </p>
                 </div>
                 <CodeEditor />
@@ -225,77 +225,80 @@ function App() {
             )}
           </section>
           
-          {/* 设置和预览区域 */}
-          <section className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* 转换设置 */}
-            <div className="space-y-6">
-              <ConversionSettings />
+          {/* 转换设置和预览区域 - 并排显示 */}
+          <section className="space-y-6">
+            {/* 转换设置和预览并排布局 */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* 转换设置 */}
+              <div>
+                <ConversionSettings />
+              </div>
               
-              {/* 转换按钮 */}
-              <div className="bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6">
-                <div className="mb-4">
-                  <h3 className="text-lg font-medium text-neutral-900 dark:text-neutral-50 mb-2">
-                    Convert SVG to PNG
-                  </h3>
-                  <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                    Click the button below to start the svg to png conversion process.
-                  </p>
-                </div>
-                <ConvertButton />
-                
-                {/* 需要帮助按钮 */}
-                <div className="mt-4 text-center">
-                  <a 
-                    href="mailto:0992sunshine@gmail.com?subject=SVG转PNG工具 - 需要帮助&body=您好，我在使用SVG转PNG工具时遇到了问题，希望能得到帮助。%0A%0A问题描述：%0A%0A谢谢！"
-                    className="inline-flex items-center space-x-1 text-xs text-neutral-500 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-help-circle">
-                      <circle cx="12" cy="12" r="10"/>
-                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
-                      <path d="M12 17h.01"/>
-                    </svg>
-                    <span>{t('help')}</span>
-                  </a>
-                </div>
+              {/* 预览区域 */}
+              <div>
+                <PreviewPanel />
               </div>
             </div>
             
-            {/* 预览面板 */}
-            <div>
-              <PreviewPanel />
+            {/* 转换按钮 - 突出显示，保持全宽 */}
+            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-xl p-8 shadow-lg">
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-bold text-neutral-900 dark:text-neutral-50 mb-3">
+                  {t('conversion.title', 'Convert SVG to PNG')}
+                </h3>
+                <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+                  {t('conversion.description', 'Click the button below to start the svg to png conversion process.')}
+                </p>
+              </div>
+              <ConvertButton />
+              
+              {/* 需要帮助按钮 */}
+              <div className="mt-6 text-center">
+                <a 
+                  href="mailto:0992sunshine@gmail.com?subject=SVG转PNG工具 - 需要帮助&body=您好，我在使用SVG转PNG工具时遇到了问题，希望能得到帮助。%0A%0A问题描述：%0A%0A谢谢！"
+                  className="inline-flex items-center space-x-2 text-sm text-neutral-500 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-help-circle">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                    <path d="M12 17h.01"/>
+                  </svg>
+                  <span>{t('help')}</span>
+                </a>
+              </div>
             </div>
           </section>
           
           {/* SVG to PNG Features */}
           <section className="bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6">
             <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-50 mb-4">
-              SVG to PNG Features
+              {t('features.title', 'SVG to PNG Features')}
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <div className="bg-primary-50 dark:bg-primary-900/20 p-4 rounded-lg border border-primary-100 dark:border-primary-800">
-                <h3 className="text-sm font-medium text-primary-900 dark:text-primary-100 mb-2">Batch SVG to PNG Support</h3>
-                <div className="text-xs text-primary-700 dark:text-primary-300">Convert multiple SVG files to PNG format simultaneously for improved efficiency</div>
+                <h3 className="text-sm font-medium text-primary-900 dark:text-primary-100 mb-2">{t('features.batch.title', 'Batch SVG to PNG Support')}</h3>
+                <div className="text-xs text-primary-700 dark:text-primary-300">{t('features.batch.description', 'Convert multiple SVG files to PNG format simultaneously for improved efficiency')}</div>
               </div>
               <div className="bg-secondary-50 dark:bg-secondary-900/20 p-4 rounded-lg border border-secondary-100 dark:border-secondary-800">
-                <h3 className="text-sm font-medium text-secondary-900 dark:text-secondary-100 mb-2">Custom PNG Size and Quality</h3>
-                <div className="text-xs text-secondary-700 dark:text-secondary-300">Flexible settings for output PNG dimensions, quality, and transparency options</div>
+                <h3 className="text-sm font-medium text-secondary-900 dark:text-secondary-100 mb-2">{t('features.customSize.title', 'Custom PNG Size and Quality')}</h3>
+                <div className="text-xs text-secondary-700 dark:text-secondary-300">{t('features.customSize.description', 'Flexible settings for output PNG dimensions, quality, and transparency options')}</div>
               </div>
               <div className="bg-primary-50 dark:bg-primary-900/20 p-4 rounded-lg border border-primary-100 dark:border-primary-800">
-                <h3 className="text-sm font-medium text-primary-900 dark:text-primary-100 mb-2">Real-time SVG Preview</h3>
-                <div className="text-xs text-primary-700 dark:text-primary-300">Preview SVG effects in real-time before conversion to ensure expected results</div>
+                <h3 className="text-sm font-medium text-primary-900 dark:text-primary-100 mb-2">{t('features.preview.title', 'Real-time SVG Preview')}</h3>
+                <div className="text-xs text-primary-700 dark:text-primary-300">{t('features.preview.description', 'Preview SVG effects in real-time before conversion to ensure expected results')}</div>
               </div>
               <div className="bg-secondary-50 dark:bg-secondary-900/20 p-4 rounded-lg border border-secondary-100 dark:border-secondary-800">
-                <h3 className="text-sm font-medium text-secondary-900 dark:text-secondary-100 mb-2">SVG Code Editor</h3>
-                <div className="text-xs text-secondary-700 dark:text-secondary-300">Built-in syntax-highlighted SVG code editor with direct editing support</div>
+                <h3 className="text-sm font-medium text-secondary-900 dark:text-secondary-100 mb-2">{t('features.editor.title', 'SVG Code Editor')}</h3>
+                <div className="text-xs text-secondary-700 dark:text-secondary-300">{t('features.editor.description', 'Built-in syntax-highlighted SVG code editor with direct editing support')}</div>
               </div>
               <div className="bg-primary-50 dark:bg-primary-900/20 p-4 rounded-lg border border-primary-100 dark:border-primary-800">
-                <h3 className="text-sm font-medium text-primary-900 dark:text-primary-100 mb-2">Multi-language Support</h3>
-                <div className="text-xs text-primary-700 dark:text-primary-300">Multiple language interface support for convenient conversion experience worldwide</div>
+                <h3 className="text-sm font-medium text-primary-900 dark:text-primary-100 mb-2">{t('features.multilang.title', 'Multi-language Support')}</h3>
+                <div className="text-xs text-primary-700 dark:text-primary-300">{t('features.multilang.description', 'Multiple language interface support for convenient conversion experience worldwide')}</div>
               </div>
               <div className="bg-secondary-50 dark:bg-secondary-900/20 p-4 rounded-lg border border-secondary-100 dark:border-secondary-800">
-                <h3 className="text-sm font-medium text-secondary-900 dark:text-secondary-100 mb-2">Dark/Light Theme</h3>
-                <div className="text-xs text-secondary-700 dark:text-secondary-300">Support for dark and light theme switching to adapt to different environments</div>
+                <h3 className="text-sm font-medium text-secondary-900 dark:text-secondary-100 mb-2">{t('features.theme.title', 'Dark/Light Theme')}</h3>
+                <div className="text-xs text-secondary-700 dark:text-secondary-300">{t('features.theme.description', 'Support for dark and light theme switching to adapt to different environments')}</div>
               </div>
             </div>
           </section>
@@ -303,7 +306,7 @@ function App() {
           {/* 使用说明 */}
           <section className="bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6">
             <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-50 mb-4">
-              How to Use Our SVG to PNG Converter
+              {t('howToUse.title', 'How to Use Our SVG to PNG Converter')}
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -313,14 +316,14 @@ function App() {
                   <span className="flex items-center justify-center w-6 h-6 bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 rounded-full text-sm font-bold">
                     1
                   </span>
-                  <span>SVG to PNG File Upload Mode</span>
+                  <span>{t('howToUse.uploadMode.title', 'SVG to PNG File Upload Mode')}</span>
                 </h3>
                 
                 <ul className="text-sm text-neutral-600 dark:text-neutral-400 space-y-1 ml-8">
-                  <li>• Drag & drop SVG files for instant svg to png conversion</li>
-                  <li>• Convert multiple SVG files to PNG format (up to 20)</li>
-                  <li>• Maximum file size: 10MB per SVG file</li>
-                  <li>• Batch svg to image conversion and download as ZIP</li>
+                  <li>• {t('howToUse.uploadMode.step1', 'Drag & drop SVG files for instant svg to png conversion')}</li>
+                  <li>• {t('howToUse.uploadMode.step2', 'Convert multiple SVG files to PNG format (up to 20)')}</li>
+                  <li>• {t('howToUse.uploadMode.step3', 'Maximum file size: 10MB per SVG file')}</li>
+                  <li>• {t('howToUse.uploadMode.step4', 'Batch svg to image conversion and download as ZIP')}</li>
                 </ul>
               </div>
               
@@ -330,14 +333,14 @@ function App() {
                   <span className="flex items-center justify-center w-6 h-6 bg-secondary-100 dark:bg-secondary-900 text-secondary-600 dark:text-secondary-400 rounded-full text-sm font-bold">
                     2
                   </span>
-                  <span>SVG Code Editor for PNG Conversion</span>
+                  <span>{t('howToUse.editorMode.title', 'SVG Code Editor for PNG Conversion')}</span>
                 </h3>
                 
                 <ul className="text-sm text-neutral-600 dark:text-neutral-400 space-y-1 ml-8">
-                  <li>• Paste SVG code directly for svg to png online conversion</li>
-                  <li>• Real-time SVG syntax highlighting and validation</li>
-                  <li>• Live preview before converting from svg to png</li>
-                  <li>• Built-in SVG converter with example templates</li>
+                  <li>• {t('howToUse.editorMode.step1', 'Paste SVG code directly for svg to png online conversion')}</li>
+                  <li>• {t('howToUse.editorMode.step2', 'Real-time SVG syntax highlighting and validation')}</li>
+                  <li>• {t('howToUse.editorMode.step3', 'Live preview before converting from svg to png')}</li>
+                  <li>• {t('howToUse.editorMode.step4', 'Built-in SVG converter with example templates')}</li>
                 </ul>
               </div>
             </div>
@@ -345,7 +348,7 @@ function App() {
             {/* 通用步骤 */}
             <div className="mt-6 pt-6 border-t border-neutral-200 dark:border-neutral-700">
               <h3 className="text-md font-medium text-neutral-800 dark:text-neutral-200 mb-3">
-                SVG to PNG Conversion Steps
+                {t('howToUse.steps.title', 'SVG to PNG Conversion Steps')}
               </h3>
               
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -353,24 +356,24 @@ function App() {
                   <div className="w-8 h-8 bg-primary-500 text-white rounded-full flex items-center justify-center mx-auto mb-2 text-sm font-bold">
                     1
                   </div>
-                  <p className="text-sm font-medium text-neutral-800 dark:text-neutral-200">Configure SVG Settings</p>
-                  <p className="text-xs text-neutral-600 dark:text-neutral-400 mt-1">Set PNG size, quality, and conversion options</p>
+                  <p className="text-sm font-medium text-neutral-800 dark:text-neutral-200">{t('howToUse.steps.step1.title', 'Configure SVG Settings')}</p>
+                  <p className="text-xs text-neutral-600 dark:text-neutral-400 mt-1">{t('howToUse.steps.step1.description', 'Set PNG size, quality, and conversion options')}</p>
                 </div>
                 
                 <div className="text-center p-4 bg-neutral-100 dark:bg-neutral-700 rounded-lg">
                   <div className="w-8 h-8 bg-secondary-500 text-white rounded-full flex items-center justify-center mx-auto mb-2 text-sm font-bold">
                     2
                   </div>
-                  <p className="text-sm font-medium text-neutral-800 dark:text-neutral-200">Preview & Convert SVG</p>
-                  <p className="text-xs text-neutral-600 dark:text-neutral-400 mt-1">Check SVG preview and start svg to png conversion</p>
+                  <p className="text-sm font-medium text-neutral-800 dark:text-neutral-200">{t('howToUse.steps.step2.title', 'Preview & Convert SVG')}</p>
+                  <p className="text-xs text-neutral-600 dark:text-neutral-400 mt-1">{t('howToUse.steps.step2.description', 'Check SVG preview and start svg to png conversion')}</p>
                 </div>
                 
                 <div className="text-center p-4 bg-neutral-100 dark:bg-neutral-700 rounded-lg">
                   <div className="w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center mx-auto mb-2 text-sm font-bold">
                     3
                   </div>
-                  <p className="text-sm font-medium text-neutral-800 dark:text-neutral-200">Download PNG Files</p>
-                  <p className="text-xs text-neutral-600 dark:text-neutral-400 mt-1">Converted PNG files download automatically</p>
+                  <p className="text-sm font-medium text-neutral-800 dark:text-neutral-200">{t('howToUse.steps.step3.title', 'Download PNG Files')}</p>
+                  <p className="text-xs text-neutral-600 dark:text-neutral-400 mt-1">{t('howToUse.steps.step3.description', 'Converted PNG files download automatically')}</p>
                 </div>
               </div>
             </div>

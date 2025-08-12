@@ -100,6 +100,7 @@ const UnifiedPreview: React.FC<UnifiedPreviewProps> = ({
   const [viewMode, setViewMode] = useState<'svg' | 'png'>(
     pngContent ? 'png' : 'svg'
   );
+  const [backgroundColor, setBackgroundColor] = useState<'transparent' | 'white' | 'black'>('transparent');
   
   const handleZoomIn = useCallback(() => {
     setZoom(prev => Math.min(prev * 1.2, 5));
@@ -157,6 +158,52 @@ const UnifiedPreview: React.FC<UnifiedPreviewProps> = ({
                     <span>{SVGConverter.formatFileSize(currentFileSize)}</span>
                   )}
                   <span>Zoom: {Math.round(zoom * 100)}%</span>
+                </div>
+              </div>
+              
+              {/* 背景色选择器 */}
+              <div className="flex items-center space-x-2">
+                <span className="text-xs text-gray-500 dark:text-gray-400">
+                  {t('preview.background.label')}
+                </span>
+                <div className="flex items-center space-x-1">
+                  <button
+                    onClick={() => setBackgroundColor('transparent')}
+                    className={`w-6 h-6 rounded border-2 transition-colors ${
+                      backgroundColor === 'transparent'
+                        ? 'border-blue-500 dark:border-blue-400'
+                        : 'border-gray-300 dark:border-gray-600'
+                    }`}
+                    style={{
+                      backgroundImage: `
+                        linear-gradient(45deg, #ccc 25%, transparent 25%), 
+                        linear-gradient(-45deg, #ccc 25%, transparent 25%), 
+                        linear-gradient(45deg, transparent 75%, #ccc 75%), 
+                        linear-gradient(-45deg, transparent 75%, #ccc 75%)
+                      `,
+                      backgroundSize: '8px 8px',
+                      backgroundPosition: '0 0, 0 4px, 4px -4px, -4px 0px'
+                    }}
+                    title={t('preview.background.transparent')}
+                  />
+                  <button
+                    onClick={() => setBackgroundColor('white')}
+                    className={`w-6 h-6 rounded border-2 bg-white transition-colors ${
+                      backgroundColor === 'white'
+                        ? 'border-blue-500 dark:border-blue-400'
+                        : 'border-gray-300 dark:border-gray-600'
+                    }`}
+                    title={t('preview.background.white')}
+                  />
+                  <button
+                    onClick={() => setBackgroundColor('black')}
+                    className={`w-6 h-6 rounded border-2 bg-black transition-colors ${
+                      backgroundColor === 'black'
+                        ? 'border-blue-500 dark:border-blue-400'
+                        : 'border-gray-300 dark:border-gray-600'
+                    }`}
+                    title={t('preview.background.black')}
+                  />
                 </div>
               </div>
               
@@ -222,21 +269,27 @@ const UnifiedPreview: React.FC<UnifiedPreviewProps> = ({
         </div>
         
         {/* 预览内容 */}
-        <div className="h-96 overflow-auto bg-white dark:bg-gray-900 relative">
+        <div className={`h-96 overflow-auto relative ${
+          backgroundColor === 'white' ? 'bg-white' :
+          backgroundColor === 'black' ? 'bg-black' :
+          'bg-white dark:bg-gray-900'
+        }`}>
           {/* 棋盘背景（用于显示透明度） */}
-          <div 
-            className="absolute inset-0 opacity-20"
-            style={{
-              backgroundImage: `
-                linear-gradient(45deg, #ccc 25%, transparent 25%), 
-                linear-gradient(-45deg, #ccc 25%, transparent 25%), 
-                linear-gradient(45deg, transparent 75%, #ccc 75%), 
-                linear-gradient(-45deg, transparent 75%, #ccc 75%)
-              `,
-              backgroundSize: '20px 20px',
-              backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px'
-            }}
-          />
+          {backgroundColor === 'transparent' && (
+            <div 
+              className="absolute inset-0 opacity-20"
+              style={{
+                backgroundImage: `
+                  linear-gradient(45deg, #ccc 25%, transparent 25%), 
+                  linear-gradient(-45deg, #ccc 25%, transparent 25%), 
+                  linear-gradient(45deg, transparent 75%, #ccc 75%), 
+                  linear-gradient(-45deg, transparent 75%, #ccc 75%)
+                `,
+                backgroundSize: '20px 20px',
+                backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px'
+              }}
+            />
+          )}
           
           <div className="relative flex items-center justify-center h-full p-4 overflow-hidden">
             {currentContent && (
@@ -299,42 +352,71 @@ const UnifiedPreview: React.FC<UnifiedPreviewProps> = ({
               <X className="w-6 h-6" />
             </button>
             
-            {viewMode === 'svg' ? (
-              <div 
-                className="transition-transform duration-200 flex items-center justify-center"
-                style={{ 
-                  transform: `scale(${zoom})`,
-                  width: '90vw',
-                  height: '90vh',
-                  maxWidth: '90vw',
-                  maxHeight: '90vh'
-                }}
-              >
+            <div 
+              className={`relative ${
+                backgroundColor === 'white' ? 'bg-white' :
+                backgroundColor === 'black' ? 'bg-black' :
+                'bg-transparent'
+              }`}
+              style={{
+                width: '90vw',
+                height: '90vh',
+                maxWidth: '90vw',
+                maxHeight: '90vh'
+              }}
+            >
+              {/* 全屏棋盘背景 */}
+              {backgroundColor === 'transparent' && (
                 <div 
-                  dangerouslySetInnerHTML={{ __html: preprocessSVG(currentContent) }}
-                  className="svg-container"
+                  className="absolute inset-0 opacity-30"
                   style={{
+                    backgroundImage: `
+                      linear-gradient(45deg, #ccc 25%, transparent 25%), 
+                      linear-gradient(-45deg, #ccc 25%, transparent 25%), 
+                      linear-gradient(45deg, transparent 75%, #ccc 75%), 
+                      linear-gradient(-45deg, transparent 75%, #ccc 75%)
+                    `,
+                    backgroundSize: '30px 30px',
+                    backgroundPosition: '0 0, 0 15px, 15px -15px, -15px 0px'
+                  }}
+                />
+              )}
+              
+              {viewMode === 'svg' ? (
+                <div 
+                  className="transition-transform duration-200 flex items-center justify-center relative z-10"
+                  style={{ 
+                    transform: `scale(${zoom})`,
                     width: '100%',
                     height: '100%'
                   }}
-                />
-              </div>
-            ) : (
-              <div
-                className="transition-transform duration-200 flex items-center justify-center"
-                style={{ 
-                  transform: `scale(${zoom})`,
-                  width: '90vw',
-                  height: '90vh'
-                }}
-              >
-                <img
-                  src={currentContent}
-                  alt="SVG to PNG fullscreen preview - high quality svg to image conversion result"
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-            )}
+                >
+                  <div 
+                    dangerouslySetInnerHTML={{ __html: preprocessSVG(currentContent) }}
+                    className="svg-container"
+                    style={{
+                      width: '100%',
+                      height: '100%'
+                    }}
+                  />
+                </div>
+              ) : (
+                <div
+                  className="transition-transform duration-200 flex items-center justify-center relative z-10"
+                  style={{ 
+                    transform: `scale(${zoom})`,
+                    width: '100%',
+                    height: '100%'
+                  }}
+                >
+                  <img
+                    src={currentContent}
+                    alt="SVG to PNG fullscreen preview - high quality svg to image conversion result"
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
+              )}
+            </div>
           </div>
         </div>
       )}

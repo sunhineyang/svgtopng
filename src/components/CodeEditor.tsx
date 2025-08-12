@@ -81,7 +81,7 @@ export const CodeEditor: React.FC<CodeEditorProps> = ({ className = '' }) => {
         <div className="flex items-center space-x-2">
           <Code className="w-5 h-5 text-gray-600 dark:text-gray-400" />
           <h3 className="text-lg font-medium text-gray-800 dark:text-gray-200">
-            {t('codeEditor.placeholder')}
+            {t('codeEditor.title')}
           </h3>
         </div>
         
@@ -116,7 +116,7 @@ export const CodeEditor: React.FC<CodeEditorProps> = ({ className = '' }) => {
             onClick={formatCode}
             disabled={!codeContent}
             className="px-3 py-1.5 text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-md hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-            title="Format Code (Shift+Alt+F)"
+            title={t('codeEditor.formatTitle', 'Format Code (Shift+Alt+F)')}
           >
             <RotateCcw className="w-4 h-4" />
           </button>
@@ -179,8 +179,7 @@ export const CodeEditor: React.FC<CodeEditorProps> = ({ className = '' }) => {
             {t('codeEditor.placeholder')}
           </p>
           <div className="mt-2 text-xs text-gray-500 dark:text-gray-500 text-center">
-            <span>💡 </span>
-            <span>Click "{t('codeEditor.example')}" to see a sample SVG code</span>
+            {t('codeEditor.helpText', '💡 Click "{{exampleText}}" to see a sample SVG code', { exampleText: t('codeEditor.example') })}
           </div>
         </div>
       )}

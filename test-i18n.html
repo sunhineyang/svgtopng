@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多语言功能测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .success {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+        .error {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+        }
+        .info {
+            background-color: #d1ecf1;
+            border-color: #bee5eb;
+            color: #0c5460;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .language-display {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>SVG to PNG 转换器 - 多语言功能测试</h1>
+    
+    <div class="test-section info">
+        <h2>📋 测试说明</h2>
+        <p>这个页面用来测试我们的多语言功能是否正常工作。请按照以下步骤进行测试：</p>
+        <ol>
+            <li>打开主应用页面：<a href="http://localhost:5173/" target="_blank">http://localhost:5173/</a></li>
+            <li>点击右上角的地球图标（🌐）打开语言选择菜单</li>
+            <li>依次测试每种语言的切换</li>
+            <li>检查页面内容是否正确翻译</li>
+            <li>刷新页面，确认语言设置是否保持</li>
+        </ol>
+    </div>
+
+    <div class="test-section">
+        <h2>🌍 支持的语言</h2>
+        <div class="language-display">
+            <div>🇺🇸 English (英语) - 默认语言</div>
+            <div>🇰🇷 한국어 (韩语) - 已优化翻译</div>
+            <div>🇯🇵 日本語 (日语) - 已优化翻译</div>
+            <div>🇷🇺 Русский (俄语) - 基础翻译</div>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>✅ 测试检查项</h2>
+        <h3>韩语 (한국어) 测试要点：</h3>
+        <ul>
+            <li>拖拽区域文本："SVG 파일을 드래그해서 즉시 PNG로 변환하세요"</li>
+            <li>错误信息更友好："올바르지 않은 SVG 형식입니다"</li>
+            <li>CTA标题："지금 바로 SVG 파일을 PNG로 변환해보세요!"</li>
+            <li>功能特点："서버 업로드 불필요", "대량 일괄 변환", "최고 품질 보장"</li>
+        </ul>
+        
+        <h3>日语 (日本語) 测试要点：</h3>
+        <ul>
+            <li>拖拽区域文本："SVGファイルをドラッグして即座にPNG変換"</li>
+            <li>错误信息更友好："正しくないSVG形式です"</li>
+            <li>CTA标题："今すぐSVGファイルをPNGに変換してみませんか？"</li>
+            <li>功能特点："サーバーアップロード不要", "大量一括変換対応", "最高品質保証"</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>🔧 功能测试</h2>
+        <p>请在主应用中测试以下功能：</p>
+        <ol>
+            <li><strong>语言切换</strong>：点击语言选择器，切换到韩语和日语</li>
+            <li><strong>界面翻译</strong>：检查所有按钮、标签、提示文本是否正确翻译</li>
+            <li><strong>错误信息</strong>：尝试上传非SVG文件，查看错误提示是否为对应语言</li>
+            <li><strong>设置保存</strong>：切换语言后刷新页面，确认语言设置保持</li>
+            <li><strong>URL同步</strong>：语言切换时URL应该相应更新</li>
+        </ol>
+    </div>
+
+    <div class="test-section success">
+        <h2>🎉 优化完成的内容</h2>
+        <h3>韩语优化：</h3>
+        <ul>
+            <li>✅ 改进拖拽文本的自然度</li>
+            <li>✅ 优化错误信息的用户友好性</li>
+            <li>✅ 本地化CTA营销文案</li>
+            <li>✅ 统一SVG to PNG术语翻译</li>
+        </ul>
+        
+        <h3>日语优化：</h3>
+        <ul>
+            <li>✅ 改进拖拽文本的自然度</li>
+            <li>✅ 优化错误信息的用户友好性</li>
+            <li>✅ 本地化CTA营销文案</li>
+            <li>✅ 统一SVG to PNG术语翻译</li>
+        </ul>
+    </div>
+
+    <div class="test-section info">
+        <h2>📝 测试结果</h2>
+        <p>完成测试后，请确认以下项目：</p>
+        <div id="test-results">
+            <label><input type="checkbox"> 韩语界面显示正常</label><br>
+            <label><input type="checkbox"> 日语界面显示正常</label><br>
+            <label><input type="checkbox"> 语言切换功能正常</label><br>
+            <label><input type="checkbox"> 错误信息正确翻译</label><br>
+            <label><input type="checkbox"> 语言设置持久化正常</label><br>
+            <label><input type="checkbox"> URL同步正常</label><br>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>🚀 快速访问</h2>
+        <button onclick="window.open('http://localhost:5173/', '_blank')">打开主应用</button>
+        <button onclick="window.open('http://localhost:5173/ko', '_blank')">直接访问韩语版</button>
+        <button onclick="window.open('http://localhost:5173/ja', '_blank')">直接访问日语版</button>
+    </div>
+
+    <script>
+        // 简单的测试结果统计
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('#test-results input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const checkedCount = document.querySelectorAll('#test-results input[type="checkbox"]:checked').length;
+                    const totalCount = checkboxes.length;
+                    
+                    if (checkedCount === totalCount) {
+                        alert('🎉 恭喜！所有测试项目都已完成！多语言功能工作正常。');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

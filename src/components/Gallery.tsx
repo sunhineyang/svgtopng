@@ -7,29 +7,38 @@ import { Code, Image, Download } from 'lucide-react';
 const galleryExamples = [
   {
     id: 1,
+    nameKey: 'gallery.examples.simpleIcon.name',
     name: 'Simple Icon',
     svgCode: `<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="50" cy="50" r="40" fill="#4b9ee4" stroke="#2563eb" stroke-width="3"/>
   <path d="M35 45 L45 55 L65 35" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>`,
+    descriptionKey: 'gallery.examples.simpleIcon.description',
     description: 'A simple check icon with blue circle background',
+    sizeKey: 'gallery.examples.simpleIcon.size',
     size: '100x100',
+    formatKey: 'gallery.examples.format',
     format: 'SVG → PNG'
   },
   {
     id: 2,
+    nameKey: 'gallery.examples.logoDesign.name',
     name: 'Logo Design',
     svgCode: `<svg width="120" height="80" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
   <rect x="10" y="20" width="100" height="40" rx="20" fill="#328976"/>
   <text x="60" y="45" text-anchor="middle" fill="white" font-family="Arial" font-size="16" font-weight="bold">LOGO</text>
   <circle cx="25" cy="40" r="8" fill="#4b9ee4"/>
 </svg>`,
+    descriptionKey: 'gallery.examples.logoDesign.description',
     description: 'Brand logo with rounded rectangle and accent circle',
+    sizeKey: 'gallery.examples.logoDesign.size',
     size: '120x80',
+    formatKey: 'gallery.examples.format',
     format: 'SVG → PNG'
   },
   {
     id: 3,
+    nameKey: 'gallery.examples.chartElement.name',
     name: 'Chart Element',
     svgCode: `<svg width="150" height="100" viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg">
   <rect x="20" y="60" width="15" height="30" fill="#4b9ee4"/>
@@ -38,8 +47,11 @@ const galleryExamples = [
   <rect x="95" y="50" width="15" height="40" fill="#4b9ee4"/>
   <rect x="120" y="30" width="15" height="60" fill="#328976"/>
 </svg>`,
+    descriptionKey: 'gallery.examples.chartElement.description',
     description: 'Bar chart visualization with multiple data points',
+    sizeKey: 'gallery.examples.chartElement.size',
     size: '150x100',
+    formatKey: 'gallery.examples.format',
     format: 'SVG → PNG'
   }
 ];
@@ -109,7 +121,7 @@ const Gallery: React.FC = () => {
             <div className="p-4 border-b border-neutral-200 dark:border-neutral-700">
               <div className="flex items-center justify-between mb-2">
                 <h3 className="text-sm font-medium text-neutral-900 dark:text-neutral-50">
-                  {example.name}
+                  {t(example.nameKey, example.name)}
                 </h3>
                 <div className="flex items-center space-x-2">
                   <button
@@ -126,17 +138,17 @@ const Gallery: React.FC = () => {
                     `}
                   >
                     {activeViews[example.id] === 'code' ? (
-                      <><Image size={12} /><span>Preview</span></>
+                      <><Image size={12} /><span>{t('gallery.buttons.preview', 'Preview')}</span></>
                     ) : (
-                      <><Code size={12} /><span>Code</span></>
+                      <><Code size={12} /><span>{t('gallery.buttons.code', 'Code')}</span></>
                     )}
                   </button>
                 </div>
               </div>
               <div className="flex items-center justify-between text-xs text-neutral-500 dark:text-neutral-400">
-                <span>{example.size}</span>
+                <span>{t(example.sizeKey, example.size)}</span>
                 <span className="bg-secondary-100 dark:bg-secondary-900/20 text-secondary-600 dark:text-secondary-400 px-2 py-1 rounded">
-                  {example.format}
+                  {t(example.formatKey, example.format)}
                 </span>
               </div>
             </div>
@@ -148,7 +160,7 @@ const Gallery: React.FC = () => {
                 <div className="space-y-4">
                   {/* SVG预览 */}
                   <div className="bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded p-4">
-                    <div className="text-xs text-neutral-500 dark:text-neutral-400 mb-2">SVG Original:</div>
+                    <div className="text-xs text-neutral-500 dark:text-neutral-400 mb-2">{t('gallery.labels.svgOriginal', 'SVG Original:')}</div>
                     <div 
                       className="flex items-center justify-center h-[120px]"
                       dangerouslySetInnerHTML={{ __html: example.svgCode }}
@@ -157,7 +169,7 @@ const Gallery: React.FC = () => {
                   
                   {/* PNG预览 */}
                   <div className="bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded p-4">
-                    <div className="text-xs text-neutral-500 dark:text-neutral-400 mb-2">PNG Result:</div>
+                    <div className="text-xs text-neutral-500 dark:text-neutral-400 mb-2">{t('gallery.labels.pngResult', 'PNG Result:')}</div>
                     <div className="flex items-center justify-center h-[120px]">
                       <img 
                         src={convertToDataUrl(example.svgCode)}
@@ -173,7 +185,7 @@ const Gallery: React.FC = () => {
                 <div className="space-y-4">
                   {/* SVG代码 */}
                   <div className="bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded p-4">
-                    <div className="text-xs text-neutral-500 dark:text-neutral-400 mb-2">SVG Original:</div>
+                    <div className="text-xs text-neutral-500 dark:text-neutral-400 mb-2">{t('gallery.labels.svgOriginal', 'SVG Original:')}</div>
                     <div className="h-[120px] overflow-auto">
                       <pre className="bg-neutral-900 dark:bg-neutral-950 text-green-400 text-xs p-3 rounded overflow-x-auto border">
                         <code>{example.svgCode}</code>
@@ -183,7 +195,7 @@ const Gallery: React.FC = () => {
                   
                   {/* PNG预览 */}
                   <div className="bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded p-4">
-                    <div className="text-xs text-neutral-500 dark:text-neutral-400 mb-2">PNG Result:</div>
+                    <div className="text-xs text-neutral-500 dark:text-neutral-400 mb-2">{t('gallery.labels.pngResult', 'PNG Result:')}</div>
                     <div className="flex items-center justify-center h-[120px]">
                       <img 
                         src={convertToDataUrl(example.svgCode)}
@@ -199,7 +211,7 @@ const Gallery: React.FC = () => {
               {/* 描述 */}
               <div className="mt-4 pt-4 border-t border-neutral-200 dark:border-neutral-700">
                 <p className="text-xs text-neutral-600 dark:text-neutral-400">
-                  {example.description}
+                  {t(example.descriptionKey, example.description)}
                 </p>
               </div>
             </div>

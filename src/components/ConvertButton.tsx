@@ -168,7 +168,7 @@ export const ConvertButton: React.FC<ConvertButtonProps> = ({ className = '' }) 
     if (!canConvert()) {
       return {
         disabled: true,
-        text: mode === 'code' ? 'Enter valid SVG code' : 'Upload SVG files',
+        text: mode === 'code' ? t('buttons.enterValidSvg') : t('buttons.uploadSvgFiles'),
         icon: <FileImage className="w-5 h-5" />,
         className: 'bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500 cursor-not-allowed'
       };
@@ -196,16 +196,16 @@ export const ConvertButton: React.FC<ConvertButtonProps> = ({ className = '' }) 
   // 获取转换统计信息
   const getConversionInfo = () => {
     if (mode === 'code') {
-      return codeContent ? '1 SVG ready' : 'No SVG code';
+      return codeContent ? t('status.oneSvgReady') : t('status.noSvgCode');
     } else {
       const readyCount = files.filter(f => f.status === 'ready').length;
       const completedCount = files.filter(f => f.status === 'completed').length;
       
       if (readyCount === 0 && completedCount === 0) {
-        return 'No files uploaded';
+        return t('status.noFilesUploaded');
       }
       
-      return `${readyCount} ready, ${completedCount} completed`;
+      return t('status.filesStatus', { ready: readyCount, completed: completedCount });
     }
   };
 
@@ -252,21 +252,21 @@ export const ConvertButton: React.FC<ConvertButtonProps> = ({ className = '' }) 
         <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-md">
           <div className="flex items-center justify-between text-sm">
             <span className="text-gray-600 dark:text-gray-400">
-              Conversion completed
+              {t('status.conversionCompleted')}
             </span>
             
             <div className="flex items-center space-x-4">
               {conversionStats.completed > 0 && (
                 <div className="flex items-center space-x-1 text-green-600 dark:text-green-400">
                   <CheckCircle className="w-4 h-4" />
-                  <span>{conversionStats.completed} successful</span>
+                  <span>{t('status.successfulCount', { count: conversionStats.completed })}</span>
                 </div>
               )}
               
               {conversionStats.failed > 0 && (
                 <div className="flex items-center space-x-1 text-red-600 dark:text-red-400">
                   <AlertTriangle className="w-4 h-4" />
-                  <span>{conversionStats.failed} failed</span>
+                  <span>{t('status.failedCount', { count: conversionStats.failed })}</span>
                 </div>
               )}
             </div>
@@ -274,7 +274,7 @@ export const ConvertButton: React.FC<ConvertButtonProps> = ({ className = '' }) 
           
           {conversionStats.completed > 0 && (
             <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-              💾 Files have been downloaded automatically
+              💾 {t('status.filesDownloaded')}
             </p>
           )}
         </div>
@@ -283,10 +283,10 @@ export const ConvertButton: React.FC<ConvertButtonProps> = ({ className = '' }) 
       {/* 帮助提示 */}
       {!isConverting && (
         <div className="text-xs text-gray-500 dark:text-gray-400 text-center space-y-1">
-          <p>💡 <strong>Tips:</strong></p>
-          <p>• All processing happens in your browser - no files uploaded to servers</p>
-          <p>• Multiple files will be downloaded as a ZIP archive</p>
-          <p>• Adjust settings above to customize output quality and size</p>
+          <p>💡 <strong>{t('buttons.tips.title')}</strong></p>
+          <p>• {t('buttons.tips.browserProcessing')}</p>
+          <p>• {t('buttons.tips.zipDownload')}</p>
+          <p>• {t('buttons.tips.adjustSettings')}</p>
         </div>
       )}
     </div>

@@ -9,26 +9,30 @@ interface ConversionSettingsProps {
 }
 
 // 预设尺寸选项
-const PRESET_SIZES = [
-  { name: 'Original', width: undefined, height: undefined, icon: Settings },
-  { name: 'Small', width: 256, height: 256, icon: Smartphone },
-  { name: 'Medium', width: 512, height: 512, icon: Tablet },
-  { name: 'Large', width: 1024, height: 1024, icon: Monitor },
-  { name: 'HD', width: 1920, height: 1080, icon: Monitor },
-  { name: '4K', width: 3840, height: 2160, icon: Monitor },
+const getPresetSizes = (t: any) => [
+  { name: t('settings.presets.original'), width: undefined, height: undefined, icon: Settings },
+  { name: t('settings.presets.small'), width: 256, height: 256, icon: Smartphone },
+  { name: t('settings.presets.medium'), width: 512, height: 512, icon: Tablet },
+  { name: t('settings.presets.large'), width: 1024, height: 1024, icon: Monitor },
+  { name: t('settings.presets.hd'), width: 1920, height: 1080, icon: Monitor },
+  { name: t('settings.presets.fourK'), width: 3840, height: 2160, icon: Monitor },
 ];
 
 // 质量预设
-const QUALITY_PRESETS = [
-  { name: 'Low', value: 0.6 },
-  { name: 'Medium', value: 0.8 },
-  { name: 'High', value: 0.9 },
-  { name: 'Best', value: 1.0 },
+const getQualityPresets = (t: any) => [
+  { name: t('settings.quality.low'), value: 0.6 },
+  { name: t('settings.quality.medium'), value: 0.8 },
+  { name: t('settings.quality.high'), value: 0.9 },
+  { name: t('settings.quality.best'), value: 1.0 },
 ];
 
 export const ConversionSettings: React.FC<ConversionSettingsProps> = ({ className = '' }) => {
   const { t } = useTranslation();
   const { conversionOptions, updateConversionOptions } = useAppStore();
+  
+  // 获取本地化的预设选项
+  const PRESET_SIZES = getPresetSizes(t);
+  const QUALITY_PRESETS = getQualityPresets(t);
   
   // 更新设置
   const handleOptionChange = useCallback((key: string, value: any) => {
@@ -67,7 +71,7 @@ export const ConversionSettings: React.FC<ConversionSettingsProps> = ({ classNam
         {/* 尺寸预设 */}
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
-            Size Presets
+            {t('settings.sizePresets')}
           </label>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
             {PRESET_SIZES.map((preset) => {
@@ -115,7 +119,7 @@ export const ConversionSettings: React.FC<ConversionSettingsProps> = ({ classNam
               value={conversionOptions.width || ''}
               onChange={(e) => handleOptionChange('width', e.target.value ? parseInt(e.target.value) : undefined)}
               className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              placeholder="Auto"
+              placeholder={t('settings.auto')}
             />
           </div>
           
@@ -130,7 +134,7 @@ export const ConversionSettings: React.FC<ConversionSettingsProps> = ({ classNam
               value={conversionOptions.height || ''}
               onChange={(e) => handleOptionChange('height', e.target.value ? parseInt(e.target.value) : undefined)}
               className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              placeholder="Auto"
+              placeholder={t('settings.auto')}
             />
           </div>
         </div>
@@ -152,7 +156,7 @@ export const ConversionSettings: React.FC<ConversionSettingsProps> = ({ classNam
         {/* 质量设置 */}
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
-            {t('settings.quality')}
+            {t('settings.qualityLabel')}
           </label>
           
           {/* 质量预设按钮 */}
@@ -190,11 +194,11 @@ export const ConversionSettings: React.FC<ConversionSettingsProps> = ({ classNam
               className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
             />
             <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400">
-              <span>Low (0.1)</span>
+              <span>{t('settings.quality.lowLabel')}</span>
               <span className="font-medium">
                 {Math.round((conversionOptions.quality || 1) * 100)}%
               </span>
-              <span>Best (1.0)</span>
+              <span>{t('settings.quality.bestLabel')}</span>
             </div>
           </div>
         </div>
@@ -202,7 +206,7 @@ export const ConversionSettings: React.FC<ConversionSettingsProps> = ({ classNam
         {/* 缩放设置 */}
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-            Scale Factor
+            {t('settings.scaleFactor')}
           </label>
           <div className="flex items-center space-x-3">
             <input
@@ -240,12 +244,12 @@ export const ConversionSettings: React.FC<ConversionSettingsProps> = ({ classNam
         
         {/* 设置说明 */}
         <div className="text-xs text-gray-500 dark:text-gray-400 bg-gray-50 dark:bg-gray-700 p-3 rounded-md">
-          <p className="mb-1">💡 <strong>Tips:</strong></p>
+          <p className="mb-1">💡 <strong>{t('settings.tips.title')}</strong></p>
           <ul className="space-y-1 ml-4">
-            <li>• Leave width/height empty to use original SVG dimensions</li>
-            <li>• Higher quality = larger file size</li>
-            <li>• Scale factor multiplies the final output size</li>
-            <li>• Transparent background preserves SVG transparency</li>
+            <li>• {t('settings.tips.dimensions')}</li>
+            <li>• {t('settings.tips.quality')}</li>
+            <li>• {t('settings.tips.scale')}</li>
+            <li>• {t('settings.tips.transparency')}</li>
           </ul>
         </div>
       </div>

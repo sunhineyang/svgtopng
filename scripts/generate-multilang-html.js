@@ -108,8 +108,14 @@ function generateHtmlForLanguage(template, lang) {
   // 移除现有的语言检测脚本（如果有的话），但保留Google Analytics等其他脚本
   html = html.replace(/\s*<script>[\s\S]*?window\.__INITIAL_LANGUAGE__[\s\S]*?<\/script>/g, '');
   
-  // 在</head>前插入hreflang标签
-  html = html.replace('</head>', `\n${hreflangTags}\n  
+  // 生成canonical链接
+  const canonicalUrl = lang === 'en' ? `${baseUrl}/` : `${baseUrl}/${lang}/`;
+  
+  // 移除现有的canonical链接（如果有的话）
+  html = html.replace(/\s*<link rel="canonical" href="[^"]*" \/>/g, '');
+  
+  // 在</head>前插入hreflang标签和canonical链接
+  html = html.replace('</head>', `\n    <link rel="canonical" href="${canonicalUrl}" />\n${hreflangTags}\n  
     <script>
       // 设置当前页面语言
       window.__INITIAL_LANGUAGE__ = '${lang}';
